@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 
-export function Switch({ isOn, ...props }) {
-
+export function Switch({ theme, ...props }) {
     return (
-        <div className={'switch'} {...props}>
-            <motion.div animate={isOn ? {x:25} : {x:0}} />
-        </div>
+        <button className={'switch ' + theme} {...props}>
+            <motion.div animate={theme === "light" ? {x:25} : {x:0}} />
+        </button>
     );
 }
