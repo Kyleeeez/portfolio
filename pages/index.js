@@ -7,8 +7,6 @@ export default function Home() {
 
   const { theme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
-  const [isOn, setIsOn] = useState(false);
-
 
   const switchTheme = () => {
     if (isMounted) {
@@ -27,16 +25,22 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className={"container"}>
+          <header className={"container flex justify-between p-5"}>
+              <div className={"transform-gpu pr-3 lg:-translate-x-full inline-block mr-10"}>test</div>
 
-          <Switch theme={theme} onClick={switchTheme}/>
+              <div className={"flex space-x-10"}>
+                  <a className={"link"} href={"#"}>Projects</a>
+                  <a className={"link"} href={"#"}>About</a>
+                  <Switch theme={theme} switchTheme={switchTheme}/>
+
+              </div>
+          </header>
+
+        <main className={"container"}>
 
 
         </main>
 
-        <footer>
-          footer
-        </footer>
       </div>
   )
 }
