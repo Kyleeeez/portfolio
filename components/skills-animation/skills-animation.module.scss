@@ -1,0 +1,80 @@
+.container{
+    @apply cursor-grab;
+
+    &:active{
+        @apply cursor-grabbing;
+    }
+
+
+
+    &::before{
+        @apply absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: rgba(255,255,255,0.03);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 0;
+    }
+
+    &::after{
+        @apply absolute;
+        content: "";
+        width: 75px;
+        height: 75px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 0;
+    }
+}
+
+/// Mixin to place items on a circle
+/// @author Hugo Giraudel
+/// @author Ana Tudor
+/// @param {Integer} $item-count - Number of items on the circle
+/// @param {Length} $circle-size - Large circle size
+/// @param {Length} $item-size - Single item size
+@mixin on-circle($item-count, $circle-size, $item-size) {
+    position: relative;
+    width:  $circle-size;
+    height: $circle-size;
+    border-radius: 50%;
+    padding: 0;
+    list-style: none;
+
+    > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:  50%;
+        left: 50%;
+        margin: -($item-size / 2);
+        width:  $item-size;
+        height: $item-size;
+
+        $angle: (360 / $item-count);
+        $rot: 0;
+
+        @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+                transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
+            }
+
+            $rot: $rot + $angle;
+        }
+
+    }
+}
+
+.circles {
+    @include on-circle($item-count: 6, $circle-size: 22em, $item-size: 5em);
+    margin: 8rem 5rem 5rem 5rem;
+    border: 1px dotted rgba(255,255,255,0.1);
+}
