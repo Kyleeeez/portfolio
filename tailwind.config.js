@@ -5,6 +5,15 @@ module.exports = {
     container: {
       center: true,
     },
+    fontFamily: {
+      'display': ['Montserrat'],
+      'body': ['Karla'],
+    },
+    cursor: {
+      pointer: 'pointer',
+      grab: 'grab',
+      grabbing: 'grabbing',
+    }
   },
   variants: {
   },
