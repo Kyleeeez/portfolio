@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {motion} from "framer-motion";
-import Image from "next/image";
 
 export const projects = [
     // Photo by ivan Torres on Unsplash
@@ -37,11 +36,16 @@ export const projects = [
     },
 ];
 
-export const CareerSection = ({match, history}) => (
-    <div className={"flex space-x-10"}>
-        {projects.map(({slug, title}) => (
-            <Project key={slug} slug={slug} title={title}/>
-        ))}
+export const ProjectSection = () => (
+    <div className={"relative py-14"} id={"career"}>
+        <div className={"text-yellow-300 tracking-wide text-4xl font-bold font-display"}>
+            Projects
+        </div>
+        <div className={"flex space-x-10"}>
+            {projects.map(({slug, title}) => (
+                <Project slug={slug} title={title} key={slug} />
+            ))}
+        </div>
     </div>
 );
 
@@ -52,7 +56,7 @@ function Project({slug, title}) {
                 <motion.div className={"inline-block"} layoutId={slug + "title"}>{title}</motion.div>
 
                 <motion.figure layoutId={slug + "cover"}>
-                    <img src="https://via.placeholder.com/150" layout="responsive" width={780} height={501} />
+                    <img src="https://via.placeholder.com/800x200" width={780} height={501} alt={title + " cover image"}/>
                 </motion.figure>
 
             </div>

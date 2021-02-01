@@ -1,11 +1,4 @@
 .container{
-    @apply cursor-grab;
-
-    &:active{
-        @apply cursor-grabbing;
-    }
-
-
 
     &::before{
         @apply absolute;

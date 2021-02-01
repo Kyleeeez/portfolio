@@ -1,5 +1,6 @@
-import {CareerSection} from "../components/career-section/career-section";
+import {CareerSection, ProjectSection} from "../components/career-section/career-section";
 import {SkillsAnimation} from "../components/skills-animation/skills-animations";
+import {AboutSection} from "../components/about-section/about-section";
 
 export default function Home() {
 
@@ -11,16 +12,9 @@ export default function Home() {
                 <SkillsAnimation/>
             </div>
 
-            <div className={"relative py-14"} id={"career"}>
+            <ProjectSection/>
 
-                <div className={"inline-block text-yellow-300 tracking-wide text-xl font-bold font-display"}>
-                    <span className={"opacity-50"}>#</span>Career
-                </div>
-
-                <CareerSection/>
-
-            </div>
-
+            <AboutSection />
         </>
     )
 }
@@ -43,7 +37,7 @@ const Heading = () => (
         </h3>
 
         <div className={"flex text-xl space-x-14 pt-10"}>
-            <a href={"#"}>Career</a>
+            <a href={"#"}>Projects</a>
             <a href={"#"}>About</a>
             <a href={"#"}>Contact</a>
         </div>

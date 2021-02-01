@@ -6,13 +6,11 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      'display': ['Montserrat'],
+      'display': ['Karla'],
       'body': ['Karla'],
     },
     cursor: {
       pointer: 'pointer',
-      grab: 'grab',
-      grabbing: 'grabbing',
     }
   },
   variants: {

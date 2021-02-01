@@ -1,5 +1,6 @@
 import {motion} from 'framer-motion'
 import {projects} from "../../components/career-section/career-section";
+import Link from "next/link";
 
 export default function ProjectDetail({projectData: {
                                               slug,
@@ -9,6 +10,8 @@ export default function ProjectDetail({projectData: {
                                       }) {
     return (
         <>
+
+            <Link href={'/'}><div className={"mb-3 cursor-pointer"}>Indietro</div></Link>
             <motion.figure layoutId={slug + "cover"}>
                 <img src="https://via.placeholder.com/800x200" className={"w-full"} height={200}/>
             </motion.figure>

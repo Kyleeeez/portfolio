@@ -55,15 +55,9 @@ const SkillContainer = ({children}) => {
                 animate={{ rotate: -360 }}
                 transition={{ repeat: Infinity, duration: 45, ease: "linear" }}>
 
-                <motion.div
-                    whileHover={{scale:1.05}}
-                    className={styles.container + " pt-2"}
-                    drag
-                    dragElastic={0.2}
-                    dragConstraints={{left: 0, right: 0, top: 0, bottom: 0}}
-                >
+                <div className={styles.container + " pt-2"}>
                     {children}
-                </motion.div>
+                </div>
             </motion.div>
         </div>
     )
