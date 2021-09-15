@@ -4,7 +4,7 @@ import "../styles/globals.scss";
 import {ThemeProvider} from "next-themes";
 import Head from "next/head";
 import {LayoutContainer} from "../components/layout-container";
-import {AnimatePresence, AnimateSharedLayout, motion} from "framer-motion";
+import {AnimateSharedLayout} from "framer-motion";
 
 function MyApp({Component, pageProps, router}) {
     return (

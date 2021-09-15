@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <>
 
-            <div className={"flex justify-between items-center overflow-hidden"}>
+            <div className={"flex justify-between items-center overflow-hidden relative"}>
                 <Heading/>
                 <SkillsAnimation/>
             </div>
