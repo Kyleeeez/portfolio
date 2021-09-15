@@ -9,12 +9,12 @@ export default function ProjectDetail({projectData: {
                                       }) {
     return (
         <>
-            <motion.figure layoutId={slug + "cover"}>
+            <motion.figure layoutId={slug + "cover"} initial={false}>
                 <img src="https://via.placeholder.com/800x200" className={"w-full"} height={200}/>
             </motion.figure>
 
 
-            <motion.div className={"inline-block font-bold text-4xl"} layoutId={slug + "title"}>
+            <motion.div className={"inline-block font-bold text-4xl"} layoutId={slug + "title"} initial={false}>
                 {title}
             </motion.div>
             <motion.p initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} transition={{delay: 0.3}}>{category}</motion.p>

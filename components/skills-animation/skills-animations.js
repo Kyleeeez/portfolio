@@ -34,9 +34,10 @@ export const SkillsAnimation = () => (
         transition={{ repeat: Infinity, duration: 45, ease: "linear" }}
         className={styles.circles}>
         {
-            skills.map(({src, alt}) =>
+            skills.map(({src, alt}, i) =>
                 <SkillContainer>
                     <Image
+                        key={i}
                         src={src}
                         alt={alt}
                         width={100}
