@@ -1,6 +1,6 @@
 import {CareerSection} from "../components/career-section/career-section";
 import {SkillsAnimation} from "../components/skills-animation/skills-animations";
-
+import Link from "next/link";
 export default function Home() {
 
     return (
@@ -44,7 +44,9 @@ const Heading = () => (
 
         <div className={"flex text-xl space-x-14 pt-10"}>
             <a href={"#"}>Career</a>
-            <a href={"#"}>About</a>
+            <Link href="/about">
+                <a>About</a>
+            </Link>
             <a href={"#"}>Contact</a>
         </div>
 
