@@ -64,7 +64,7 @@ export const LayoutContainer = ({children}) => {
             </div>
 
             <div className={"flex-grow md:px-5"}>
-                <motion.div key={router.route} initial={{opacity: 0}} animate={{opacity: 1}}>
+                <motion.div key={router.route} initial={false} animate={{opacity: 1}}>
                     {children}
                 </motion.div>
             </div>
