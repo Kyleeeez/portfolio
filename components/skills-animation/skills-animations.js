@@ -35,9 +35,9 @@ export const SkillsAnimation = () => (
         className={styles.circles}>
         {
             skills.map(({src, alt}, i) =>
-                <SkillContainer>
+                <SkillContainer
+                    key={i}>
                     <Image
-                        key={i}
                         src={src}
                         alt={alt}
                         width={100}

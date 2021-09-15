@@ -21,6 +21,7 @@ export const LayoutContainer = ({children}) => {
     };
 
     useEffect(() => {
+        setIsMounted(true);
         window.addEventListener('resize', updateWindowDimensions);
         setWindowInnerWidth(window.innerWidth);
     }, []);
@@ -28,11 +29,6 @@ export const LayoutContainer = ({children}) => {
     const updateWindowDimensions = () => {
         setWindowInnerWidth(window.innerWidth);
     }
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
 
     return (
 
