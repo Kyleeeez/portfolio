@@ -11,8 +11,7 @@ class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Karla:wght@300;700&family=Montserrat:wght@300;600&display=swap"
                         rel="stylesheet"/>
                 </Head>
-                <body
-                    className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white transition-colors overflow-x-hidden">
+                <body className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white transition-colors overflow-x-hidden">
                     <Main/>
                     <NextScript/>
                 </body>

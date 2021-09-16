@@ -9,15 +9,16 @@ export const LayoutContainer = ({children}) => {
 
     const router = useRouter();
 
-    const {theme, setTheme} = useTheme();
+    const {theme, setTheme, resolvedTheme} = useTheme();
+
+    console.log(theme, resolvedTheme);
+
     const [isMounted, setIsMounted] = useState(false);
 
     const [windowInnerWidth, setWindowInnerWidth] = useState();
 
     const switchTheme = () => {
-        if (isMounted) {
-            setTheme(theme === "light" ? "dark" : "light");
-        }
+        setTheme(resolvedTheme === "light" ? "dark" : "light");
     };
 
     useEffect(() => {
@@ -29,6 +30,8 @@ export const LayoutContainer = ({children}) => {
     const updateWindowDimensions = () => {
         setWindowInnerWidth(window.innerWidth);
     }
+
+    if (!isMounted) return null;
 
     return (
 
@@ -54,7 +57,7 @@ export const LayoutContainer = ({children}) => {
 
                 {
                     windowInnerWidth < 768 &&
-                    <Switch switchTheme={switchTheme} theme={theme}/>
+                    <Switch switchTheme={switchTheme} theme={resolvedTheme}/>
 
                 }
             </div>
@@ -68,7 +71,7 @@ export const LayoutContainer = ({children}) => {
 
             {
                 windowInnerWidth >= 768 &&
-                <Switch switchTheme={switchTheme} theme={theme}/>
+                <Switch switchTheme={switchTheme} theme={resolvedTheme}/>
             }
         </main>
 
