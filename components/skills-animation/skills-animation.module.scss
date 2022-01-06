@@ -1,36 +1,17 @@
 .container{
-    @apply cursor-grab;
-
-    &:active{
-        @apply cursor-grabbing;
-    }
-
-
 
     &::before{
         @apply absolute;
         content: "";
-        width: 100px;
-        height: 100px;
-        background: rgba(255,255,255,0.03);
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(150deg, #1A345D 13.4%, #001E4C 86.6%);
         border-radius: 50%;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
         z-index: 0;
-    }
-
-    &::after{
-        @apply absolute;
-        content: "";
-        width: 75px;
-        height: 75px;
-        background: rgba(255,255,255,0.05);
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        z-index: 0;
+        opacity: 0.8;
     }
 }
 
@@ -74,9 +55,9 @@
 }
 
 .circles {
-    @include on-circle($item-count: 6, $circle-size: 22em, $item-size: 5em);
+    @include on-circle($item-count: 6, $circle-size: 20em, $item-size: 25em);
     margin: 8rem 5rem 5rem 5rem;
-    border: 1px dotted rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.05);
 }
 
 @media screen and (max-width: 767px){

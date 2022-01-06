@@ -48,7 +48,7 @@ export const CareerSection = ({match, history}) => (
 function Project({slug, title}) {
     return (
         <Link href={'projects/' + slug}>
-            <div className={"bg-gray-700 cursor-pointer"}>
+            <div className={"bg-slate-700 cursor-pointer"}>
                 <motion.div className={"inline-block"} layoutId={slug + "title"}>{title}</motion.div>
 
                 <motion.figure layoutId={slug + "cover"}>
