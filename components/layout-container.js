@@ -118,7 +118,7 @@ export const LayoutContainer = ({children}) => {
             </svg>
 
 
-            <div className={"px-5 overflow-hidden"}>
+            <div className={"px-3 md:px-5"}>
                 <motion.div className="container max-w-screen-xl" key={router.route} initial={false}
                             animate={{opacity: 1}}>
                     {children}

@@ -30,41 +30,37 @@ const skills = [
 
 export const SkillsAnimation = () => (
 
-    <div className="absolute right-10 -top-20 -mt-5 hidden lg:block">
+    <div className="mx-auto order-1 lg:order-2">
+        <div className="relative inline-block scale-75 md:scale-100 -mt-10 md:mt-0">
 
 
-        <video autoPlay loop muted width="170" className="rounded-full absolute light-shadow" style={{width: 170, height: 170, right: 155, top: 205}} >
-            <source src="/vid.mp4"
-                    type="video/mp4"/>
-        </video>
+            <video preload playsInline poster="" autoPlay loop muted width="170" className="rounded-full absolute light-shadow" style={{width: 170, height: 170, right: 105, top: 105}} >
+                <source src="/vid.mp4" type="video/mp4"/>
+            </video>
 
-        <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ repeat: Infinity, duration: 85, ease: "linear" }}
-            className={styles.circles}>
-            {
-                skills.map(({src, alt}, i) =>
-                    <SkillContainer
-                        key={i}>
-                        <Image
-                            src={src}
-                            alt={alt}
-                            width={50}
-                            height={50}
-                        />
-                    </SkillContainer>
-                )
-            }
-        </motion.div>
+            <div className={styles.circles}>
+                {
+                    skills.map(({src, alt}, i) =>
+                        <SkillContainer
+                            key={i}>
+                            <Image
+                                src={src}
+                                alt={alt}
+                                width={50}
+                                height={50}
+                            />
+                        </SkillContainer>
+                    )
+                }
+            </div>
+        </div>
     </div>
 )
 
 export const SkillContainer = ({children}) => {
     return (
         <div>
-            <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 85, ease: "linear" }}>
+            <motion.div>
 
                 <div
                     className={styles.container + " pt-2"}

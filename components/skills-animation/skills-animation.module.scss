@@ -56,15 +56,6 @@
 
 .circles {
     @include on-circle($item-count: 6, $circle-size: 20em, $item-size: 25em);
-    margin: 8rem 5rem 5rem 5rem;
+    margin: 30px;
     border: 2px solid rgba(255,255,255,0.05);
-}
-
-@media screen and (max-width: 767px){
-
-    .circles {
-        position: absolute;
-        left: 70vw;
-        border: none;
-    }
 }
