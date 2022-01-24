@@ -44,7 +44,8 @@ export const LayoutContainer = ({children}) => {
 
                 <div className="container max-w-screen-xl flex justify-between items-center pl-3">
                     <Link href="/">
-                        <a>
+                        <a aria-label="Francesco Palomba's logo">
+
                             <div className="flex items-center h-10 relative">
                                 <svg style={{minWidth: 30}} width="30" height="40" viewBox="0 0 39 47"
                                      fill="none" xmlns="http://www.w3.org/2000/svg">
