@@ -11,6 +11,7 @@ function MyApp({Component, pageProps, router}) {
         <>
             <Head>
                 <title>Francesco Palomba's Portfolio</title>
+                <meta name="description" content="Front-end developer and UI/UX designer" />
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 

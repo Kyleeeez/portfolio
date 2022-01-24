@@ -115,7 +115,7 @@ export default function Home() {
                     Send me an email
                 </a>
                 <a className="btn secondary" href="https://t.me/kyleez">
-                    <PaperAirplaneIcon className="h-5 w-5 mr-1"/>
+                    <PaperAirplaneIcon className="h-5 w-5 mr-1 rotate-45"/>
                     Chat on Telegram
                 </a>
             </div>
@@ -163,7 +163,7 @@ const Heading = () => (
 
                     <div className="flex gap-x-3">
 
-                        <button className="btn primary"
+                        <button className="btn primary"  aria-label="Read my story"
                                 onClick={() => document.getElementById("careerSection").scrollIntoView({behavior: "smooth"})}>
                             <ChevronDoubleDownIcon className="h-5 w-5"/> My story
                         </button>
@@ -333,8 +333,7 @@ const EducationExperiences = () => (
                     <div className="md:flex mb-14 md:mb-28 ">
                         <div className="md:w-1/2 w-full">
                             <p className="text-2xl md:text-3xl mb-2">{title}</p>
-                            <a href={companyUrl} target="_blank"
-                               className="block text-blue-300 text-xl mb-4 md:mb-0">@{company}</a>
+                            <div className="block text-blue-300 text-xl mb-4 md:mb-0">@{company}</div>
                         </div>
                         <p className="md:w-1/2 tracking-wide opacity-80 md:pl-10">
                             {description}
