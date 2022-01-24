@@ -31,7 +31,7 @@ const skills = [
 
 export const SkillsAnimation = () => (
 
-    <div className="mx-auto order-1 lg:order-2 md:-mt-14">
+    <div className="mx-auto order-1 lg:order-2 md:-mt-20">
         <div className="relative inline-block scale-75 md:scale-100 -mt-10 md:mt-0">
 
 

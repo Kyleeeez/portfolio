@@ -109,20 +109,42 @@ export default function Home() {
             <EducationExperiences/>
 
 
-            <div className="flex gap-x-3 items-center mb-10">
-                <a className="btn primary md:ml-40" href="mailto:palomba.fra@gmail.com">
-                    <MailIcon className="h-5 w-5 mr-1"/>
-                    Send me an email
-                </a>
-                <span className="opacity-50">or</span>
-                <a className="btn secondary border border-slate-500/50" href="https://t.me/kyleez">
-                    <PaperAirplaneIcon className="h-5 w-5 mr-1 rotate-45"/>
-                    Let's chat on Telegram
-                </a>
+
+
+            <LineWithBulb isLabel strokeColor="bg-blue-300">
+                <div className="h-[50px]"/>
+            </LineWithBulb>
+
+            <div id="chatSection" className="from-blue-200/10 to-gray-100/75 dark:from-slate-500/10 dark:to-slate-400/25 bg-gradient-to-br rounded p-10 text-center">
+                <h4 className="font-display text-3xl font-bold flex m-0 justify-center">
+                    <ChatAltIcon className="h-8 w-8 mr-3 text-yellow-400"/>
+                    <span>Let's talk</span>
+                </h4>
+                <p className="opacity-80 mb-5 mt-3">If you’d like to chat, feel free to contact me at the following platforms</p>
+
+
+                <div className="flex flex-wrap gap-y-3 gap-x-3 justify-center items-center">
+                    <a className="btn bg-blue-900 text-white" href="mailto:palomba.fra@gmail.com">
+                        <MailIcon className="h-5 w-5 mr-1"/>
+                        Email
+                    </a>
+                    <a className="btn bg-blue-700 text-white" href="https://t.me/kyleez">
+
+                        <img src="/images/logos/telegram-icon.svg" className="mr-1"/>
+                        Telegram
+                    </a>
+                    <a className="btn bg-blue-500 text-white" target="_blank"  rel="noopener" href="https://www.linkedin.com/in/francesco-palomba/">
+                        <img src="/images/logos/linkedin-icon.svg" className="mr-1"/>
+                        Linkedin
+                    </a>
+                </div>
+
             </div>
 
 
-            <p className="opacity-50 italic md:px-20 mb-3 text-sm">*Portfolio currently under construction</p>
+
+
+            <p className="opacity-25 md:px-20 mb-3 text-sm text-center mt-4">*Portfolio currently under development</p>
         </>
     )
 }
@@ -136,7 +158,7 @@ const Heading = () => (
 
 
             <LineWithBulb initial hideMobile>
-                <div className="pb-5 text-center md:text-left -mt-5 md:mt-3">
+                <div className="pb-5 text-center md:text-left -mt-5 md:mt-0">
 
 
                     <p className={"font-light text-2xl pb-0 mt-0 md:mb-2"}>
@@ -170,9 +192,10 @@ const Heading = () => (
                         </button>
 
 
-                        <a className="btn secondary" href="mailto:palomba.fra@gmail.com">
+                        <button className="btn secondary"  aria-label="Let's talk"
+                           onClick={() => document.getElementById("chatSection").scrollIntoView({behavior: "smooth"})}>
                             <ChatAltIcon className="h-5 w-5 mr-1 opacity-80"/> Let's talk
-                        </a>
+                        </button>
                     </div>
 
 

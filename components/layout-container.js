@@ -87,31 +87,14 @@ export const LayoutContainer = ({children}) => {
             </div>
 
 
-            <svg className="absolute top-[400px] left-[10%] opacity-70" width="181" height="181"
-                 viewBox="0 0 181 181" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle opacity="0.1" cx="90.8119" cy="90.8127" r="89.9052" transform="rotate(30 90.8119 90.8127)"
-                        fill="url(#paint0_linear_923_781)"/>
-                <defs>
-                    <linearGradient id="paint0_linear_923_781" x1="90.8119" y1="0.90757" x2="90.8119" y2="180.718"
-                                    gradientUnits="userSpaceOnUse">
-                        <stop stop-color="white"/>
-                        <stop offset="1" stop-color="white" stop-opacity="0"/>
-                    </linearGradient>
-                </defs>
-            </svg>
+            <div className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tr absolute top-[400px] left-[10%] opacity-70 w-[181px] h-[181px] rounded-full -z-1" />
 
-            <svg className="absolute top-[700px] right-[20%] -scale-x-100 opacity-30" width="150" height="150"
-                 viewBox="0 0 181 181" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle opacity="0.1" cx="90.8119" cy="90.8127" r="89.9052" transform="rotate(30 90.8119 90.8127)"
-                        fill="url(#paint0_linear_923_781)"/>
-                <defs>
-                    <linearGradient id="paint0_linear_923_781" x1="90.8119" y1="0.90757" x2="90.8119" y2="180.718"
-                                    gradientUnits="userSpaceOnUse">
-                        <stop stop-color="white"/>
-                        <stop offset="1" stop-color="white" stop-opacity="0"/>
-                    </linearGradient>
-                </defs>
-            </svg>
+            <div className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tl absolute top-[800px] right-[20%] opacity-70 w-[180px] h-[180px] rounded-full -z-1" />
+
+            <div className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tr absolute top-[1400px] left-[10%] opacity-70 w-[140px] h-[140px] rounded-full -z-1" />
+
+            <div className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tl absolute top-[2000px] right-[20%] opacity-70 w-[200px] h-[200px] rounded-full -z-1" />
+
 
 
             <div className={"px-3 md:px-5"}>
