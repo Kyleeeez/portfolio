@@ -1,6 +1,7 @@
 import {motion} from "framer-motion";
 import styles from './skills-animation.module.scss';
 import Image from 'next/image';
+
 const skills = [
     {
         src: "/images/react.svg",
@@ -30,44 +31,51 @@ const skills = [
 
 export const SkillsAnimation = () => (
 
-    <div className="mx-auto order-1 lg:order-2">
+    <div className="mx-auto order-1 lg:order-2 md:-mt-14">
         <div className="relative inline-block scale-75 md:scale-100 -mt-10 md:mt-0">
 
 
-            <video preload playsInline poster="" autoPlay loop muted width="170" className="rounded-full absolute light-shadow" style={{width: 170, height: 170, right: 105, top: 105}} >
+            <video preload playsInline poster="" autoPlay loop muted width="170"
+                   className="rounded-full absolute light-shadow"
+                   style={{width: 170, height: 170, right: 105, top: 105}}>
                 <source src="/vid.mp4" type="video/mp4"/>
             </video>
 
-            <div className={styles.circles}>
+            <motion.div
+
+                animate={{ rotate: -360 }}
+                transition={{ repeat: Infinity, duration: 85, ease: "linear" }}
+                className={styles.circles + " border border-gray-200 dark:border-white/10 "}>
                 {
                     skills.map(({src, alt}, i) =>
                         <SkillContainer
                             key={i}>
-                            <Image
-                                src={src}
-                                alt={alt}
-                                width={50}
-                                height={50}
-                            />
+                            <div
+                                className="bg-gray-100/80 dark:bg-slate-600 w-[80px] h-[80px] p-4 overflow-hidden rounded-full">
+                                <Image
+                                    src={src}
+                                    alt={alt}
+                                    width={50}
+                                    height={50}
+                                />
+                            </div>
                         </SkillContainer>
                     )
                 }
-            </div>
+            </motion.div>
         </div>
     </div>
 )
 
 export const SkillContainer = ({children}) => {
     return (
-        <div>
-            <motion.div>
-
-                <div
-                    className={styles.container + " pt-2"}
-                >
-                    {children}
-                </div>
+        <motion.div>
+            <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 85, ease: "linear" }}
+            >
+                {children}
             </motion.div>
-        </div>
+        </motion.div>
     )
 }

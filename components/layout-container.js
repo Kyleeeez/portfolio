@@ -68,7 +68,7 @@ export const LayoutContainer = ({children}) => {
                     </Link>
 
 
-                    <div className="relative">
+                    <div className="relative hidden">
 
                         <div className={"flex text-lg justify-center space-x-10"}>
                             <a href={"#"}>Career</a>
@@ -79,11 +79,6 @@ export const LayoutContainer = ({children}) => {
 
 
                         </div>
-
-                        <motion.div animate={{translateX: currScroll / 1.7}}
-                                    className="rounded-full w-2 h-2 bg-yellow-300 absolute left-6 -bottom-3">
-
-                        </motion.div>
                     </div>
 
                     <Switch switchTheme={switchTheme} theme={resolvedTheme}/>

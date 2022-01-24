@@ -14,7 +14,7 @@ function MyApp({Component, pageProps, router}) {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <ThemeProvider attribute="class" defaultTheme='system' enableSystem={true}>
+            <ThemeProvider attribute="class" defaultTheme='dark' enableSystem={false}>
                 <AnimateSharedLayout>
                     <LayoutContainer>
                         <Component {...pageProps} />

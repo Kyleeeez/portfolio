@@ -1,8 +1,8 @@
 
-export const LineWithBulb = ({className, children, initial, infoElement, isLabel, strokeColor = "bg-white"}) => {
+export const LineWithBulb = ({className, children, initial, infoElement, isLabel, strokeColor = "bg-slate-700/20 dark:bg-white", hideMobile}) => {
 
     return(
-        <div className={(className || "") + " flex -z-1 relative"} >
+        <div className={(className || "") + " flex relative" + (initial ? "" : " -z-1")} >
 
             {
                 !initial &&
@@ -13,7 +13,7 @@ export const LineWithBulb = ({className, children, initial, infoElement, isLabel
                 </div>
 
             }
-            <div className={"relative grow" + ((initial && !isLabel) ? " pt-4" : "")} style={{zIndex: 0}} >
+            <div className={"relative grow" + ((initial && !isLabel) ? " pt-4" : "") + (hideMobile ? " hidden md:block" : "")} style={{zIndex: 0}} >
                 {
                     !isLabel &&
                         <>

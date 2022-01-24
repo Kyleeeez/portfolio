@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import {LineWithBulb} from "../components/lineWithBulb";
 import {SkillsAnimation} from "../components/skills-animation/skills-animations";
-import {ChevronDoubleDownIcon} from '@heroicons/react/solid'
+import {ChevronDoubleDownIcon, MailIcon} from '@heroicons/react/solid'
 import {ChatAltIcon} from "@heroicons/react/outline";
+import {useTheme} from "next-themes";
 
 const skills = {
     react: {
@@ -76,8 +77,7 @@ const educationExperiences = [
         to: "Sep. 2014",
         title: "Computer Science",
         company: "La Sapienza - University of Rome, Italy",
-        description: "Acquired advanced programming and algorithm notions.",
-        skills: [skills.react, skills.js, skills.figma, skills.css, skills.html, skills.next]
+        description: "Acquired advanced programming and algorithm notions. Acquired deep notions of Python and Java.",
     },
     {
         from: "Sep. 2008",
@@ -85,28 +85,39 @@ const educationExperiences = [
         title: "Computer Expert Diploma",
         company: "ITIS Enrico Fermi, Rome, Italy",
         description: "Acquired basic level of programming languages HTML, CSS, PHP, MySql, JS, Java, C++.",
-        skills: [skills.react, skills.js, skills.figma, skills.css, skills.html, skills.next]
     },
 ]
 
 export default function Home() {
+    const {resolvedTheme} = useTheme();
 
     return (
         <>
 
             <Heading/>
 
+
             <div className="ml-5  -top-9 hidden md:block">
                 <svg width="159" height="196" viewBox="0 0 159 196" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="0.2" d="M158 196C158 81.5 1 131 1 0" stroke="white" stroke-width="2"/>
+                    <path opacity="0.2" d="M158 196C158 81.5 1 131 1 0" stroke={resolvedTheme === "dark" ? "white" : "rgb(3 30 78 / 0.2)"} stroke-width="2"/>
                 </svg>
             </div>
 
 
-            <CareerExperiences />
+            <CareerExperiences/>
 
-            <EducationExperiences />
+            <EducationExperiences/>
 
+
+            <div className="flex">
+                <a className="btn primary md:ml-40 mb-10">
+                    <MailIcon className="h-5 w-5 mr-1"/>
+                    Let's talk
+                </a>
+            </div>
+
+
+            <p className="opacity-50 italic md:px-20 mb-3 text-sm">*Portfolio currently under construction</p>
         </>
     )
 }
@@ -119,27 +130,28 @@ const Heading = () => (
         <div className="order-2 md:order-1 w-full md:w-auto">
 
 
-            <LineWithBulb initial>
-                <div className="pb-5">
+            <LineWithBulb initial hideMobile>
+                <div className="pb-5 text-center md:text-left -mt-5 md:mt-3">
 
 
-                    <p className={"font-light text-2xl pb-0 mt-0 mb-2"}>
+                    <p className={"font-light text-2xl pb-0 mt-0 md:mb-2"}>
                         Hi, I'm
                     </p>
-                    <h1 className={"font-display font-medium text-5xl tracking-wide leading-tight mb-2"}>
+                    <h1 className={"font-display font-medium text-4xl md:text-5xl tracking-wide leading-tight mb-2"}>
                         Francesco Palomba
                     </h1>
                     <h2 className={"font-medium text-yellow-300 text-2xl tracking-wide leading-tight mb-4"}>
                         Front-end developer <span className={"font-light text-white"}>& </span>
-                        <span className="block md:inline-block">UI<span
+                        <span className="whitespace-nowrap">UI<span
                             className={"font-light text-white opacity-50"}>/</span>UX <span
                             className={"whitespace-nowrap"}>designer </span></span>
                     </h2>
 
 
                     <p className="opacity-90 mb-10 w-full">
-                        I'm 27 years old, with <span className="text-yellow-300">6+ years experience </span>in turning my
-                        designs into clean code.<br/>
+                        I'm 27 years old, with <span className="text-yellow-300">6+ years experience </span>in turning
+                        my
+                        <span className="whitespace-nowrap"> designs into clean code.</span><br/>
                         Curious lifelong learner, I firmly believe in the power of collaboration.<br/>
                         Always looking for the next problem to solve.<br/>
                     </p>
@@ -147,14 +159,15 @@ const Heading = () => (
 
                     <div className="flex gap-x-3">
 
-                        <button className="btn primary">
+                        <button className="btn primary"
+                                onClick={() => document.getElementById("careerSection").scrollIntoView({behavior: "smooth"})}>
                             <ChevronDoubleDownIcon className="h-5 w-5"/> My story
                         </button>
 
 
-                        <button className="btn secondary">
+                        <a className="btn secondary" href="mailto:palomba.fra@gmail.com">
                             <ChatAltIcon className="h-5 w-5 mr-1 opacity-80"/> Let's talk
-                        </button>
+                        </a>
                     </div>
 
 
@@ -170,35 +183,41 @@ const Heading = () => (
 
 
 const CareerExperiences = () => (
-    <div>
+    <div id="careerSection" className="-mt-5 md:mt-0">
         <LineWithBulb isLabel strokeColor="bg-yellow-300">
             <div className="h-[150px]"/>
         </LineWithBulb>
 
-        <div className="-mt-[52px] -translate-y-14 md:text-center md:ml-[110px] sticky w-[100px] md:w-[130px] whitespace-nowrap z-9 font-medium text-lg tracking-widest top-[150px] text-yellow-300 bg-slate-400/30 pl-3 rounded-lg backdrop-blur">
+        <div
+            className="-mt-[52px] -translate-y-14 md:text-center md:ml-[110px] sticky w-[100px] md:w-[130px] whitespace-nowrap z-9 font-medium text-lg tracking-widest top-[150px] text-yellow-300 bg-slate-700 dark:bg-slate-400/30 pl-3 rounded-lg backdrop-blur">
 
 
-            <div className="h-5 w-10 scale-75 absolute translate-y-0.5 -top-[19.5px] -translate-x-[11px] md:translate-x-9 overflow-hidden">
+            <div
+                className="h-5 w-10 scale-75 absolute translate-y-0.5 -top-[19.5px] -translate-x-[11px] md:translate-x-9 overflow-hidden">
                 <div className="h-10 w-10 rounded-full p-1.5">
                     <div className="rounded-full h-full p-2">
-                        <div className="bg-yellow-300  rounded-full h-full" />
+                        <div className="bg-yellow-300  rounded-full h-full"/>
                     </div>
                 </div>
             </div>
 
-            <div className="h-5 w-10 scale-75 absolute -translate-y-0.5 -bottom-[19.5px] -translate-x-[11px] md:translate-x-9 overflow-hidden">
+            <div
+                className="h-5 w-10 scale-75 absolute -translate-y-0.5 -bottom-[19.5px] -translate-x-[11px] md:translate-x-9 overflow-hidden">
                 <div className="h-10 w-10 rounded-full p-1.5 -mt-5">
                     <div className="rounded-full h-full p-2">
-                        <div className="bg-yellow-300  rounded-full h-full" />
+                        <div className="bg-yellow-300  rounded-full h-full"/>
                     </div>
                 </div>
             </div>
 
-            <span className="inline-block text-xl py-3">Career</span>
+            <span className="inline-block text-xl font-extralight py-3">Career</span>
 
         </div>
 
 
+        <LineWithBulb className="" strokeColor="bg-yellow-300" isLabel>
+            <div className="py-5"/>
+        </LineWithBulb>
 
         {
             careerExperiences.map(({from, to, title, company, skills, description, companyUrl}) => (
@@ -224,11 +243,11 @@ const CareerExperiences = () => (
                             <a href={companyUrl} target="_blank"
                                className="block text-yellow-300 text-xl mb-20 md:mb-0">@{company}</a>
                             <div
-                                className="flex md:flex-wrap items-center my-4 overflow-auto absolute left-0 px-16 md:px-0 -mt-16 w-full md:w-auto md:mt-0 md:static">
+                                className="flex flex-wrap items-center my-4 md:px-0 -mt-16 w-full md:w-auto md:mt-0 md:static">
                                 {
-                                    skills.map(({src, alt}, i) =>
+                                    !!skills?.length && skills.map(({src, alt}, i) =>
                                         <div
-                                            className="flex items-center rounded p-3 rounded bg-slate-900/40 mr-2 mb-2">
+                                            className="flex items-center rounded p-3 rounded text-slate-900 dark:text-white bg-gray-100 dark:bg-slate-900/40 mr-2 mb-2">
 
                                                 <span style={{width: 17, height: 17}}>
                                                     <Image
@@ -262,26 +281,29 @@ const EducationExperiences = () => (
             <div className="h-[150px]"/>
         </LineWithBulb>
 
-        <div className="-mt-[52px] -translate-y-14 md:text-center md:ml-[110px] sticky w-[100px] md:w-[130px] whitespace-nowrap z-9 font-medium text-lg tracking-widest top-[150px] text-yellow-300 bg-slate-400/30 pl-3 rounded-lg backdrop-blur">
+        <div
+            className="-mt-[52px] -translate-y-14 md:text-center md:ml-[110px] sticky w-[130px] md:w-[150px] whitespace-nowrap z-9 font-medium text-lg tracking-widest top-[150px] text-yellow-300 bg-slate-700 dark:bg-slate-400/30 pl-3 rounded-lg backdrop-blur">
 
 
-            <div className="h-5 w-10 scale-75 absolute translate-y-0.5 -top-[19.5px] -translate-x-[11px] md:translate-x-9 overflow-hidden">
+            <div
+                className="h-5 w-10 scale-75 absolute translate-y-0.5 -top-[19.5px] -translate-x-[11px] md:translate-x-9 overflow-hidden">
                 <div className="h-10 w-10 rounded-full p-1.5">
                     <div className="rounded-full h-full p-2">
-                        <div className="bg-yellow-300  rounded-full h-full" />
+                        <div className="bg-blue-300  rounded-full h-full"/>
                     </div>
                 </div>
             </div>
 
-            <div className="h-5 w-10 scale-75 absolute -translate-y-0.5 -bottom-[19.5px] -translate-x-[11px] md:translate-x-9 overflow-hidden">
+            <div
+                className="h-5 w-10 scale-75 absolute -translate-y-0.5 -bottom-[19.5px] -translate-x-[11px] md:translate-x-9 overflow-hidden">
                 <div className="h-10 w-10 rounded-full p-1.5 -mt-5">
                     <div className="rounded-full h-full p-2">
-                        <div className="bg-yellow-300  rounded-full h-full" />
+                        <div className="bg-blue-300  rounded-full h-full"/>
                     </div>
                 </div>
             </div>
 
-            <span className="inline-block text-xl py-3">Education</span>
+            <span className="inline-block text-xl font-extralight text-blue-300 py-3">Education</span>
 
         </div>
 
@@ -295,11 +317,11 @@ const EducationExperiences = () => (
                         <div className="flex -mt-2 md:mt-0 gap-x-8 md:block  md:text-right text-lg">
                             <div className="flex order-2 flex-col md:block">
                                 <span className="uppercase tracking-wide text-sm opacity-50 pr-2">to</span>
-                                <span className="text-yellow-300 text-right">{to}</span>
+                                <span className="text-blue-300 text-right">{to}</span>
                             </div>
                             <div className="flex order-1 flex-col md:block">
                                 <span className="uppercase tracking-wide text-sm opacity-50 pr-2">from</span>
-                                <span className="text-yellow-300 text-right">{from}</span>
+                                <span className="text-blue-300 text-right">{from}</span>
                             </div>
                         </div>
                     }
@@ -308,28 +330,7 @@ const EducationExperiences = () => (
                         <div className="md:w-1/2 w-full">
                             <p className="text-2xl md:text-3xl mb-2">{title}</p>
                             <a href={companyUrl} target="_blank"
-                               className="block text-yellow-300 text-xl mb-20 md:mb-0">@{company}</a>
-                            <div
-                                className="flex md:flex-wrap items-center my-4 overflow-auto absolute left-0 px-16 md:px-0 -mt-16 w-full md:w-auto md:mt-0 md:static">
-                                {
-                                    skills.map(({src, alt}, i) =>
-                                        <div
-                                            className="flex items-center rounded p-3 rounded bg-slate-900/40 mr-2 mb-2">
-
-                                                <span style={{width: 17, height: 17}}>
-                                                    <Image
-                                                        key={i}
-                                                        src={src}
-                                                        alt={alt + " logo"}
-                                                        width={17}
-                                                        height={17}
-                                                    />
-                                                </span>
-                                            <span className="pl-2 opacity-70">{alt}</span>
-                                        </div>
-                                    )
-                                }
-                            </div>
+                               className="block text-blue-300 text-xl mb-4 md:mb-0">@{company}</a>
                         </div>
                         <p className="md:w-1/2 tracking-wide opacity-80 md:pl-10">
                             {description}
