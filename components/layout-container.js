@@ -69,14 +69,17 @@ export const LayoutContainer = ({children}) => {
                     </Link>
 
 
-                    <div className="relative hidden">
+                    <div className="relative">
 
                         <div className={"flex text-lg justify-center space-x-10"}>
-                            <a href={"#"}>Career</a>
-                            <Link href="/about">
-                                <a>About</a>
-                            </Link>
-                            <a href={"#"}>Contact</a>
+                            <button className="opacity-50 hover:opacity-100"
+                               onClick={() => document.getElementById("careerSection").scrollIntoView({behavior: "smooth"})}>
+
+                                Career</button>
+                            <button className="opacity-50 hover:opacity-100"
+                               onClick={() => document.getElementById("chatSection").scrollIntoView({behavior: "smooth"})}>
+
+                                Contact</button>
 
 
                         </div>
@@ -87,14 +90,17 @@ export const LayoutContainer = ({children}) => {
             </div>
 
 
-            <div className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tr absolute top-[400px] left-[10%] opacity-70 w-[181px] h-[181px] rounded-full -z-1" />
+            <div
+                className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tr absolute top-[400px] left-[10%] opacity-70 w-[181px] h-[181px] rounded-full -z-1"/>
 
-            <div className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tl absolute top-[800px] right-[20%] opacity-70 w-[180px] h-[180px] rounded-full -z-1" />
+            <div
+                className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tl absolute top-[800px] right-[20%] opacity-70 w-[180px] h-[180px] rounded-full -z-1"/>
 
-            <div className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tr absolute top-[1400px] left-[10%] opacity-70 w-[140px] h-[140px] rounded-full -z-1" />
+            <div
+                className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tr absolute top-[1400px] left-[10%] opacity-70 w-[140px] h-[140px] rounded-full -z-1"/>
 
-            <div className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tl absolute top-[2000px] right-[20%] opacity-70 w-[200px] h-[200px] rounded-full -z-1" />
-
+            <div
+                className="from-gray-100/0 to-gray-100/75 dark:from-slate-900/0 dark:to-slate-400/25 bg-gradient-to-tl absolute top-[2000px] right-[20%] opacity-70 w-[200px] h-[200px] rounded-full -z-1"/>
 
 
             <div className={"px-3 md:px-5"}>

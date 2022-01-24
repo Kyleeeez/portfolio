@@ -115,7 +115,7 @@ export default function Home() {
                 <div className="h-[50px]"/>
             </LineWithBulb>
 
-            <div id="chatSection" className="from-blue-200/10 to-gray-100/75 dark:from-slate-500/10 dark:to-slate-400/25 bg-gradient-to-br rounded p-10 text-center">
+            <div id="chatSection" className="from-blue-200/10 to-gray-100/75 dark:from-slate-500/10 dark:to-slate-400/25 bg-gradient-to-br rounded py-9 px-5 text-center">
                 <h4 className="font-display text-3xl font-bold flex m-0 justify-center">
                     <ChatAltIcon className="h-8 w-8 mr-3 text-yellow-400"/>
                     <span>Let's talk</span>
