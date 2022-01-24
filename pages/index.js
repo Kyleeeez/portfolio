@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import {LineWithBulb} from "../components/lineWithBulb";
 import {SkillsAnimation} from "../components/skills-animation/skills-animations";
-import {ChevronDoubleDownIcon, MailIcon} from '@heroicons/react/solid'
+import {ChevronDoubleDownIcon, MailIcon, PaperAirplaneIcon} from '@heroicons/react/solid'
 import {ChatAltIcon} from "@heroicons/react/outline";
 import {useTheme} from "next-themes";
 
@@ -109,10 +109,14 @@ export default function Home() {
             <EducationExperiences/>
 
 
-            <div className="flex">
-                <a className="btn primary md:ml-40 mb-10">
+            <div className="flex gap-x-3 items-top mb-10">
+                <a className="btn primary md:ml-40" href="mailto:palomba.fra@gmail.com">
                     <MailIcon className="h-5 w-5 mr-1"/>
-                    Let's talk
+                    Send me an email
+                </a>
+                <a className="btn secondary" href="https://t.me/kyleez">
+                    <PaperAirplaneIcon className="h-5 w-5 mr-1"/>
+                    Chat on Telegram
                 </a>
             </div>
 
