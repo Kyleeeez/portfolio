@@ -158,7 +158,7 @@ const Heading = () => (
 
 
             <LineWithBulb initial hideMobile>
-                <div className="pb-5 text-center md:text-left -mt-5 md:mt-0">
+                <div className="pb-5 text-center md:text-left -mt-5 md:mt-3">
 
 
                     <p className={"font-light text-2xl pb-0 mt-0 md:mb-2"}>
