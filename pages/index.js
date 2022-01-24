@@ -244,8 +244,8 @@ const CareerExperiences = () => (
                     <div className="md:flex mb-14 md:mb-28 ">
                         <div className="md:w-1/2 w-full">
                             <p className="text-2xl md:text-3xl mb-2">{title}</p>
-                            <a href={companyUrl} target="_blank"
-                               className="block text-yellow-300 text-xl mb-20 md:mb-0">@{company}</a>
+                            <a href={companyUrl} target="_blank"  rel="noopener"
+                            className="block text-yellow-300 text-xl mb-20 md:mb-0">@{company}</a>
                             <div
                                 className="flex flex-wrap items-center my-4 md:px-0 -mt-16 w-full md:w-auto md:mt-0 md:static">
                                 {
