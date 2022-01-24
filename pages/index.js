@@ -109,14 +109,15 @@ export default function Home() {
             <EducationExperiences/>
 
 
-            <div className="flex gap-x-3 items-top mb-10">
+            <div className="flex gap-x-3 items-center mb-10">
                 <a className="btn primary md:ml-40" href="mailto:palomba.fra@gmail.com">
                     <MailIcon className="h-5 w-5 mr-1"/>
                     Send me an email
                 </a>
-                <a className="btn secondary" href="https://t.me/kyleez">
+                <span className="opacity-50">or</span>
+                <a className="btn secondary border border-slate-500/50" href="https://t.me/kyleez">
                     <PaperAirplaneIcon className="h-5 w-5 mr-1 rotate-45"/>
-                    Chat on Telegram
+                    Let's chat on Telegram
                 </a>
             </div>
 
