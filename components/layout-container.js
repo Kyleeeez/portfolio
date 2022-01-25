@@ -11,8 +11,6 @@ export const LayoutContainer = ({children}) => {
 
     const {theme, setTheme, resolvedTheme} = useTheme();
 
-    //console.log(theme, resolvedTheme);
-
     const [isMounted, setIsMounted] = useState(false);
 
     const [currScroll, setCurrScroll] = useState(0);
