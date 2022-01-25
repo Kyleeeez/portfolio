@@ -46,7 +46,7 @@ const careerExperiences = [
         description: "Webapps development in React (NextJS), Angular7 (+ Ionic), HTML5 and SCSS (Bootstrap and Tailwind).\n" +
             "UI / UX design and prototyping in Figma.\n" +
             "Occasional backend development (NodeJS)\n" +
-            "Task-based workflow (Asana + Git)",
+            "Task-based workflow (Asana/ClickUp + GitHub)",
         skills: [skills.react, skills.js, skills.figma, skills.css, skills.html, skills.next]
 
     },

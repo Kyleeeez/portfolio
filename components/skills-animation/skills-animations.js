@@ -36,7 +36,7 @@ export const SkillsAnimation = () => (
 
 
             <video preload playsInline poster="" autoPlay loop muted width="170"
-                   className="rounded-full absolute outline outline-8 outline-gray-100 dark:outline-slate-600"
+                   className="rounded-full absolute border border-8 border-gray-100 dark:border-slate-600"
                    style={{width: 170, height: 170, right: 105, top: 105}}>
                 <source src="/vid.mp4" type="video/mp4"/>
             </video>
