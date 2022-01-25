@@ -37,7 +37,7 @@ export const LayoutContainer = ({children}) => {
     return (
 
 
-        <main className={"font-body font-extralight tracking-wide"}>
+        <main className={"font-body font-extralight tracking-wide pb-5"}>
 
 
             <div className={"z-10 backdrop-blur sticky top-0 p-5 bg-white/80 dark:bg-slate-800/60"}>
