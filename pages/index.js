@@ -38,8 +38,19 @@ const skills = {
 
 const careerExperiences = [
     {
-        from: "Jan. 2020",
+        from: "June 2022",
         to: "Current",
+        title: "Senior Frontend Developer",
+        company: "lastminute.com",
+        companyUrl: "https://lastminute.com.com",
+        description: "Software development in React + MobX, TypeScript, GitLab.\n" +
+            "Agile workflow with Jira",
+        skills: [skills.react, skills.js]
+
+    },
+    {
+        from: "Jan. 2020",
+        to: "May 2022",
         title: "React developer, UI Designer",
         company: "Seedble",
         companyUrl: "https://seedble.com",
