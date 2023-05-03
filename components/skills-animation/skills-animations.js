@@ -5,27 +5,27 @@ import Image from 'next/image';
 const skills = [
     {
         src: "/images/react.svg",
-        alt: "React Logo"
+        alt: "React logo"
     },
     {
         src: "/images/figma.svg",
-        alt: "Figma Logo"
+        alt: "Figma logo"
     },
     {
-        src: "/images/css3.svg",
-        alt: "CSS3 Logo"
+        src: "/images/sass.svg",
+        alt: "SASS logo"
     },
     {
-        src: "/images/js.svg",
-        alt: "JS Logo"
+        src: "/images/ts.svg",
+        alt: "TS logo"
     },
     {
         src: "/images/next.svg",
-        alt: "NextJS Logo"
+        alt: "NextJS logo"
     },
     {
-        src: "/images/html5.svg",
-        alt: "HTML5 Logo"
+        src: "/images/jest.svg",
+        alt: "Jest logo"
     },
 ]
 

@@ -21,7 +21,7 @@ export const LayoutContainer = ({children}) => {
 
     useEffect(() => {
         setIsMounted(true);
-
+        setTheme("dark");
         window.addEventListener('scroll', updateWindowScroll)
 
     }, []);
@@ -83,7 +83,12 @@ export const LayoutContainer = ({children}) => {
                         </div>
                     </div>
 
+                    <div/>
+                    {
+                        /*
                     <Switch switchTheme={switchTheme} theme={resolvedTheme}/>
+                         */
+                    }
                 </div>
             </div>
 
