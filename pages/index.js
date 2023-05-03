@@ -108,7 +108,7 @@ export default function Home() {
             <Heading/>
 
 
-            <div className="ml-5  -top-9 hidden md:block">
+            <div className="ml-5 lg:-mt-3 -top-10 hidden md:block">
                 <svg width="159" height="196" viewBox="0 0 159 196" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.2" d="M158 196C158 81.5 1 131 1 0" stroke={resolvedTheme === "dark" ? "white" : "rgb(3 30 78 / 0.2)"} stroke-width="2"/>
                 </svg>
@@ -126,7 +126,7 @@ export default function Home() {
                 <div className="h-[50px]"/>
             </LineWithBulb>
 
-            <div id="chatSection" className="from-blue-200/10 to-gray-100/75 dark:from-slate-500/10 dark:to-slate-400/25 bg-gradient-to-br rounded py-9 px-5 text-center">
+            <div id="chatSection" className="border border-blue-200/20 from-blue-200/10 to-gray-100/75 dark:from-slate-500/10 dark:to-slate-400/25 bg-gradient-to-br rounded-lg py-9 px-5 text-center">
                 <h4 className="font-display text-3xl font-bold flex m-0 justify-center">
                     <ChatAltIcon className="h-8 w-8 mr-3 text-yellow-400"/>
                     <span>Let's talk</span>
@@ -169,7 +169,7 @@ const Heading = () => (
 
 
             <LineWithBulb initial hideMobile>
-                <div className="pb-5 text-center md:text-left -mt-5 md:mt-3">
+                <div className="pb-5 text-center md:text-left -mt-5 md:mt-0">
 
 
                     <p className={"font-light text-2xl pb-0 mt-0 md:mb-2"}>
