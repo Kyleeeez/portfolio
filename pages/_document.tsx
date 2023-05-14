@@ -8,10 +8,10 @@ class MyDocument extends Document {
                 <Head>
                     <link rel="preconnect" href="https://fonts.gstatic.com"/>
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;700&family=Montserrat:wght@300;500;600&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Montserrat:wght@500&display=swap"
                         rel="stylesheet"/>
                 </Head>
-                <body className="bg-white dark:bg-gradient-to-br from-slate-900 to-slate-600 text-slate-800 dark:text-white transition-colors">
+                <body className="bg-light dark:bg-primary text-primary dark:text-light transition-colors">
                     <Main/>
                     <NextScript/>
                 </body>
