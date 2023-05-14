@@ -7,23 +7,15 @@ export default function Home() {
     return (
         <>
 
-
             <Navbar />
-
 
             <main className="container font-normal pt-56">
 
                 <HeroSection />
 
-
                 <CareerSection />
 
-
             </main>
-
-
-
-
 
         </>
     )

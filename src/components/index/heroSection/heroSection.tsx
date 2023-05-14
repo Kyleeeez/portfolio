@@ -20,7 +20,7 @@ export const HeroSection = () => {
                 <p className={"font-light text-2xl pb-0 mt-0 md:mb-2"}>
                     Hi, I'm
                 </p>
-                <h1 className={"font-semibold tracking-wide text-4xl md:text-5xl mb-2"}>
+                <h1 className={"font-semibold font-display tracking-wide text-4xl md:text-5xl mb-2"}>
                     Francesco Palomba
                 </h1>
                 <h2 className={"font-medium text-secondary text-2xl tracking-wide leading-tight mb-4"}>
@@ -28,7 +28,7 @@ export const HeroSection = () => {
                 </h2>
 
                 <p className="mb-10 w-full text-lg">
-                    I'm 27 years old, with <span className="text-secondary">6+ years experience </span>in turning
+                    I'm 28 years old, with <span className="text-secondary">{new Date().getFullYear() - 2016}+ years experience </span>in turning
                     my
                     <span className="whitespace-nowrap"> designs into clean code.</span><br/>
                     Curious lifelong learner, I firmly believe in the power of collaboration.<br/>
