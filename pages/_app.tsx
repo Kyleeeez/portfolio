@@ -16,7 +16,7 @@ function MyApp({Component, pageProps}) {
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
             </Head>
 
-            <ThemeProvider attribute="class" defaultTheme='dark' enableSystem={true}>
+            <ThemeProvider attribute="class" enableSystem={true}>
                 <Component {...pageProps} />
             </ThemeProvider>
         </>

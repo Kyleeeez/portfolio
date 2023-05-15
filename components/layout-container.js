@@ -21,9 +21,7 @@ export const LayoutContainer = ({children}) => {
 
     useEffect(() => {
         setIsMounted(true);
-        setTheme("dark");
         window.addEventListener('scroll', updateWindowScroll)
-
     }, []);
 
     const updateWindowScroll = () => {

@@ -7,8 +7,9 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      'display': ['Inter'],
-      'body': ['Inter'],
+      sans: [
+        "Inter, sans-serif",
+      ],
     },
     cursor: {
       pointer: 'pointer',
