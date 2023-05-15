@@ -12,7 +12,7 @@ export const HeroSection = () => {
     const [Spline, setSpline] = useState(null);
 
     useEffect(() => {
-        //setSpline(window.innerWidth > 768 ? dynamic(() => import('@splinetool/react-spline')) : null);
+        setSpline(window.innerWidth > 768 ? dynamic(() => import('@splinetool/react-spline')) : null);
     }, []);
 
     return (
@@ -83,12 +83,9 @@ export const HeroSection = () => {
                     <motion.div initial={{opacity: 0}} animate={loaded && {opacity: 1}}
                                 className="cursor-grab active:cursor-grabbing">
                         {
-                            /*
                             Spline &&
                             <Spline onLoad={() => setLoaded(true)}
                                     scene="https://prod.spline.design/pobLkzB1W8D2qzId/scene.splinecode"/>
-
-                             */
 
                         }
                     </motion.div>
