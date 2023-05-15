@@ -19,7 +19,7 @@ module.exports = {
       colors: {
         primary: '#03081D',
         secondary: '#F43F5E',
-        light: '#F6F8FF',
+        light: '#F3F6FF',
         darkCard: '#1B2033',
       }
     },

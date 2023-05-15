@@ -37,7 +37,7 @@ export type experience = {
     company: string,
     companyUrl: string,
     description: string,
-    skills: typeof skills[],
+    skills: Array<Record<string, string>>,
 }
 
 
