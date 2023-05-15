@@ -5,3 +5,5 @@
 /.next
 /.idea
 /yarn-error.log
+yarn.lock
+/analyze
