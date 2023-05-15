@@ -1,5 +1,5 @@
 import {HeroSection} from "../src/components/index/heroSection/heroSection";
-import {Navbar} from "../src/components/index/_navbar/navbar";
+import {Navbar} from "../src/components/_navbar/navbar";
 import {CareerSection} from "../src/components/index/career-section/career-section";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
 
             <Navbar />
 
-            <main className="container font-normal pt-56">
+            <main className="md:container font-normal mx-4 ps-4 md:ps-6 mt-56 border-s-2 border-white dark:border-white/10">
 
                 <HeroSection />
 
