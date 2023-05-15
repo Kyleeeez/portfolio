@@ -12,7 +12,7 @@ export const HeroSection = () => {
     const [Spline, setSpline] = useState(null);
 
     useEffect(() => {
-        setSpline(window.innerWidth > 768 ? dynamic(() => import('@splinetool/react-spline')) : null);
+        //setSpline(window.innerWidth > 768 ? dynamic(() => import('@splinetool/react-spline')) : null);
     }, []);
 
     return (
@@ -20,7 +20,7 @@ export const HeroSection = () => {
             <div className="-translate-y-4 relative">
 
 
-                <Bulb />
+                <Bulb/>
 
                 <p className={"font-light text-2xl pb-0 mt-0 md:mb-2"}>
                     Hi, I'm
@@ -29,11 +29,13 @@ export const HeroSection = () => {
                     Francesco Palomba
                 </h1>
                 <h2 className={"font-medium text-secondary text-xl md:text-2xl tracking-wide leading-tight mb-4"}>
-                    Senior frontend developer<span className="text-white">,<br className="md:hidden"/></span> UI designer
+                    Senior frontend developer<span className="text-white">,<br className="md:hidden"/></span> UI
+                    designer
                 </h2>
 
                 <p className="dark:opacity-80 tracking-wide dark:font-light mb-10 w-full md:text-lg">
-                    I'm {new Date().getFullYear() - 1995} years old, with <span className="text-secondary">{new Date().getFullYear() - 2016}+ years experience </span>in turning
+                    I'm {new Date().getFullYear() - 1995} years old, with <span
+                    className="text-secondary">{new Date().getFullYear() - 2016}+ years experience </span>in turning
                     my
                     <span className="whitespace-nowrap"> designs into clean, robust code.</span><br/>
                     Curious lifelong learner, I firmly believe in the power of collaboration.<br/>
@@ -78,11 +80,15 @@ export const HeroSection = () => {
                     </AnimatePresence>
 
 
-                    <motion.div initial={{opacity: 0}} animate={loaded && {opacity: 1}} className="cursor-grab active:cursor-grabbing">
+                    <motion.div initial={{opacity: 0}} animate={loaded && {opacity: 1}}
+                                className="cursor-grab active:cursor-grabbing">
                         {
+                            /*
                             Spline &&
                             <Spline onLoad={() => setLoaded(true)}
                                     scene="https://prod.spline.design/pobLkzB1W8D2qzId/scene.splinecode"/>
+
+                             */
 
                         }
                     </motion.div>
