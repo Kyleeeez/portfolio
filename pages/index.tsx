@@ -9,7 +9,7 @@ export default function Home() {
 
             <Navbar />
 
-            <main className="md:container font-normal mx-4 ps-4 md:ps-6 mt-56 border-s-2 border-white dark:border-white/10">
+            <main className="md:container tracking-wide mx-4 ps-4 md:ps-6 mt-56 border-s-2 border-white dark:border-white/10">
 
                 <HeroSection />
 

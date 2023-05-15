@@ -25,15 +25,15 @@ export const HeroSection = () => {
                 <p className={"font-light text-2xl pb-0 mt-0 md:mb-2"}>
                     Hi, I'm
                 </p>
-                <h1 className={"font-semibold font-display tracking-wide text-4xl md:text-5xl mb-2"}>
+                <h1 className={"font-semibold tracking-normal text-4xl md:text-5xl mb-2"}>
                     Francesco Palomba
                 </h1>
-                <h2 className={"font-medium text-secondary text-xl md:text-2xl tracking-wide leading-tight mb-4"}>
-                    Senior frontend developer<span className="text-white">,<br className="md:hidden"/></span> UI
+                <h2 className={"text-secondary font-light text-xl md:text-2xl leading-tight mb-4"}>
+                    Senior frontend developer<span className="text-primary dark:text-white">,<br className="md:hidden"/></span> UI
                     designer
                 </h2>
 
-                <p className="dark:opacity-80 tracking-wide dark:font-light mb-10 w-full md:text-lg">
+                <p className="tracking-wide dark:font-light mb-10 w-full md:text-lg">
                     I'm {new Date().getFullYear() - 1995} years old, with <span
                     className="text-secondary">{new Date().getFullYear() - 2016}+ years experience </span>in turning
                     my

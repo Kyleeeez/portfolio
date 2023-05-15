@@ -17,14 +17,12 @@ export const CareerSection = () => {
     }, [])
 
     useEffect(() => {
-        if (emblaApi) emblaApi.on('select', onSelect)
-    }, [emblaApi, onSelect])
-
-
-    useEffect(() => {
         setIsMobile(window.innerWidth < 768);
     }, []);
 
+    useEffect(() => {
+        if (emblaApi) emblaApi.on('select', onSelect)
+    }, [emblaApi, onSelect])
 
     useEffect(() => {
         emblaApi && emblaApi.scrollTo(activeIndex);
@@ -36,7 +34,7 @@ export const CareerSection = () => {
 
             <Bulb/>
 
-            <h2 className="font-display font-medium text-2xl md:text-4xl mb-5 md:mb-10">
+            <h2 className="font-bold text-2xl md:text-4xl mb-5 md:mb-10">
                 Career
             </h2>
             <p className="text-sm opacity-30 font-light mb-2 hidden md:block">
@@ -154,14 +152,14 @@ export const CareerSection = () => {
                                                         </span>
 
 
-                                                            <h2 className="text-2xl font-display my-2">{title}</h2>
+                                                            <h2 className="text-2xl my-2">{title}</h2>
 
                                                             <a href={companyUrl} target="_blank"
                                                                className="text-secondary text-sm font-medium"
                                                                rel="noopener">{company}</a>
 
 
-                                                            <p className="mt-4 opacity-75 border-t border-white/10 pt-4">
+                                                            <p className="mt-4 opacity-75 border-t border-primary/10 dark:border-white/10 pt-4">
                                                                 {description}
                                                             </p>
 
