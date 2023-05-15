@@ -144,7 +144,7 @@ export const CareerSection = () => {
                                                                                skills
                                                                            }, i) => (
                                                         <div key={id}
-                                                             className={`${activeIndex === i ? "" : "opacity-80"} transition-opacity bg-white dark:bg-darkCard transition-colors embla__slide rounded-lg px-6 pt-6 pb-3 cursor-grab active:cursor-grabbing ${id !== careerExperiences.length ? "mb-9" : ""}`}>
+                                                             className={`${activeIndex === i ? "" : "opacity-80"} hover:opacity-100 transition-opacity bg-white dark:bg-darkCard transition-colors embla__slide rounded-lg px-6 pt-6 pb-3 cursor-grab active:cursor-grabbing ${id !== careerExperiences.length ? "mb-9" : ""}`}>
 
                                                         <span
                                                             className="text-sm font-light flex items-center mb-1 gap-1">
