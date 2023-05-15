@@ -7,7 +7,7 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      'display': ['Montserrat'],
+      'display': ['Inter'],
       'body': ['Inter'],
     },
     cursor: {
