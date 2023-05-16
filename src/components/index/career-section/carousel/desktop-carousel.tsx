@@ -38,9 +38,9 @@ export const DesktopCarousel = () => {
 
             <div className="w-full relative overflow-hidden -mt-10 -mb-10">
                 <div
-                    className="absolute h-10 top-0 left-0 w-full bg-gradient-to-b from-light dark:from-primary to-transparent z-10"/>
+                    className="absolute h-10 top-0 left-0 w-full bg-gradient-to-b from-light dark:from-dark to-transparent z-10"/>
                 <div
-                    className="absolute h-10 bottom-0 left-0 w-full bg-gradient-to-t from-light dark:from-primary to-transparent z-10"/>
+                    className="absolute h-10 bottom-0 left-0 w-full bg-gradient-to-t from-light dark:from-dark to-transparent z-10"/>
 
 
                 <div className="absolute top-0 left-0 w-full h-full py-10">
