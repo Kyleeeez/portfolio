@@ -85,7 +85,7 @@ export const DetailCard = ({active, title, from, to, companyUrl, company, descri
                 {
                     !!skills?.length && skills.map(({src, alt}, i) =>
                         <div key={src}
-                             className="flex items-center rounded px-3 py-2 rounded bg-light dark:bg-primary/20">
+                             className="flex items-center rounded px-3 py-2 rounded bg-light dark:bg-dark/20">
 
                                                             <span style={{width: 17, height: 17}}>
                                                                 <img

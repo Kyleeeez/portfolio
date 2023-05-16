@@ -20,7 +20,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#03081D',
+        dark: '#03081D',
+        primary: '#0D1743',
         secondary: '#F43F5E',
         light: '#F3F6FF',
         darkCard: '#1B2033',

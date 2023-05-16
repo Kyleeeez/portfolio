@@ -23,7 +23,7 @@ export function Switch({theme, switchTheme, ...props}) {
             <SunIcon className="absolute top-1 right-1 h-4 w-4 text-white dark:text-white/50 pointer-events-none z-10"/>
 
             <button aria-label="Alternate between light and dark theme"
-                    className={styles.switch + ' ' + (theme === "light" ? "bg-primary/10" : "bg-gray-100/10")} {...props}
+                    className={styles.switch + ' ' + (theme === "light" ? "bg-dark/10" : "bg-gray-100/10")} {...props}
                     onClick={switchTheme}>
                 <motion.div className={"transition-colors " + (theme === "light" ? "bg-yellow-500" : "bg-white")}
                             animate={theme === "light" ? {translateX: 25} : {translateX: 0}}/>

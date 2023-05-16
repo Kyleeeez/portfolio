@@ -30,7 +30,7 @@ export const Navbar = () => {
     return (
         <>
             <motion.div animate={showNavbar ? {translateY: 0} : {translateY: -85}}
-                        className={"z-50 border-b dark:border-white/10 fixed top-0 left-0 w-full backdrop-blur bg-light/40 dark:bg-primary/40 transition-colors"}>
+                        className={"z-50 border-b dark:border-white/10 fixed top-0 left-0 w-full backdrop-blur bg-light/40 dark:bg-dark/40 transition-colors"}>
                 <div className="container flex justify-between items-center py-5">
                     <Link href="/" legacyBehavior>
                         <a aria-label="Francesco Palomba's logo">

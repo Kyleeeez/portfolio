@@ -12,7 +12,7 @@ class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap"
                         rel="stylesheet"/>
                 </Head>
-                <body className="bg-light dark:bg-primary text-primary dark:text-light transition-colors antialiased">
+                <body className="bg-light dark:bg-dark text-primary dark:text-light transition-colors antialiased">
                     <Main/>
                     <NextScript/>
                 </body>
