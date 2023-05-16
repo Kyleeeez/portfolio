@@ -5,6 +5,7 @@ import {loader, splineContainer} from "./heroSection.module.scss";
 import dynamic from 'next/dynamic';
 import {Bulb} from "../../bulb";
 import useIsMobile from "../../../hooks/isMobile";
+import {is} from "immutable";
 
 
 export const HeroSection = () => {
@@ -13,7 +14,6 @@ export const HeroSection = () => {
     const [Spline, setSpline] = useState(null);
 
     const isMobile = useIsMobile();
-
 
 
     useEffect(() => {
@@ -71,7 +71,7 @@ export const HeroSection = () => {
 
                     <AnimatePresence>
                         {
-                            !loaded &&
+                            (!loaded && !isMobile) &&
                             <motion.div className={loader} exit={{opacity: 0}}>
                                 <img src={'/images/lazy-cubes.png'}/>
 

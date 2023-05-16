@@ -25,7 +25,6 @@ export const CareerSection = () => {
             {
                 isMobile ?
                     <MobileCarousel/>
-
                     :
                     <DesktopCarousel/>
             }
