@@ -24,7 +24,7 @@ export const DesktopCarousel = () => {
 
 
     return (
-        <div className="flex gap-10 ms-0 -mr-0">
+        <div className="flex gap-10 -ms-6 -mt-2">
 
             <div className="px-3 md:px-0 gap-x-2 min-w-[350px] w-[350px]">
                 {
@@ -38,9 +38,9 @@ export const DesktopCarousel = () => {
 
             <div className="w-full relative overflow-hidden -mt-10 -mb-10">
                 <div
-                    className="absolute h-10 top-0 left-0 w-full bg-gradient-to-b from-light dark:from-dark to-transparent z-10"/>
+                    className="absolute h-5 top-0 left-0 w-full bg-gradient-to-b from-light dark:from-dark to-transparent z-10"/>
                 <div
-                    className="absolute h-10 bottom-0 left-0 w-full bg-gradient-to-t from-light dark:from-dark to-transparent z-10"/>
+                    className="absolute h-5 bottom-0 left-0 w-full bg-gradient-to-t from-light dark:from-dark to-transparent z-10"/>
 
 
                 <div className="absolute top-0 left-0 w-full h-full py-10">
@@ -55,7 +55,7 @@ export const DesktopCarousel = () => {
                                 {
                                     careerExperiences.map((experience, i) => (
                                         <div key={experience.id} onClick={() => setActiveIndex(i)}
-                                             className={i !== careerExperiences.length ? "mb-9" : ""}
+                                             className={i !== careerExperiences.length ? "mb-5" : ""}
                                         >
                                             <DetailCard {...experience} active={i === activeIndex} />
                                         </div>
@@ -76,8 +76,11 @@ export const DesktopCarousel = () => {
 
 
 const PreviewCard = ({index, onCardHover, from, to, title, active, company, skills, description, companyUrl}) => (
-    <div
-        className={`bg-white transition-opacity dark:bg-darkCard pt-5 pb-3 px-5 ${active ? "border-r-2 border-secondary" : "opacity-40"}  ${index !== careerExperiences.length - 1 ? " mb-6" : ""}`}
+    <div className={`
+             border-l-2 border-secondary bg-white transition-opacity dark:bg-dark pt-5 pb-3 px-5 
+            ${active ? "dark:bg-gradient-to-r dark:from-secondary/20 dark:to-dark" : "opacity-40"} 
+            ${index !== careerExperiences.length - 1 ? " mb-6" : ""}
+        `}
         onMouseEnter={() => onCardHover(index)}>
             <span className="font-medium text-xl  flex items-center mb-1 gap-1">
                 <CalendarIcon width={20} className={"text-secondary inline-block mb-1 me-1"}/>
@@ -110,8 +113,7 @@ const PreviewCard = ({index, onCardHover, from, to, title, active, company, skil
         }
 
 
-        <a href={companyUrl} target="_blank" className={"text-secondary font-medium text-sm"}
-           rel="noopener">{company}</a>
+        <a href={companyUrl} target="_blank" className={"text-secondary font-medium text-sm"} rel="noopener">{company}</a>
 
     </div>
 )
