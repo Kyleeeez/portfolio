@@ -9,19 +9,8 @@ export const CareerSection = () => {
 
     const isMobile = useIsMobile();
 
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
-    if (!isMounted) {
-        return null;
-    }
-
     return (
         <div className={"mt-32 md:mt-96 mb-40 relative"} id="careerSection">
-
 
             <Bulb/>
 
