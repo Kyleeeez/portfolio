@@ -38,7 +38,7 @@ export const LayoutContainer = ({children}) => {
 
             <div className={"z-10 backdrop-blur sticky top-0 p-5 bg-white/80 dark:bg-slate-800/60"}>
 
-                <div className="container max-w-screen-xl flex justify-between items-center pl-3">
+                <div className="container max-w-screen-xl flex justify-between items-center">
                     <Link href="/">
                         <a aria-label="Francesco Palomba's logo">
 

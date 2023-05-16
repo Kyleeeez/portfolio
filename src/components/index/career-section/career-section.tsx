@@ -1,32 +1,23 @@
-import {careerExperiences} from "../../../lib/data";
-import React, {useCallback, useEffect, useState} from "react";
-import {CalendarIcon} from "@heroicons/react/outline";
-import useEmblaCarousel from "embla-carousel-react";
+import React, {useEffect, useState} from "react";
 import {Bulb} from "../../bulb";
+import {DesktopCarousel} from "./carousel/desktop-carousel";
+import {MobileCarousel} from "./carousel/mobile-carousel";
+import {CalendarIcon} from "@heroicons/react/outline";
+import useIsMobile from "../../../hooks/isMobile";
 
 export const CareerSection = () => {
 
-    const [activeIndex, setActiveIndex] = useState<number>(0);
+    const isMobile = useIsMobile();
 
-    const [isMobile, setIsMobile] = useState(false);
-
-    const [emblaRef, emblaApi] = useEmblaCarousel({axis: isMobile ? "x" : "y", align: 0});
-
-    const onSelect = useCallback((emblaApi) => {
-        setActiveIndex(emblaApi.selectedScrollSnap());
-    }, [])
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setIsMobile(window.innerWidth < 768);
+        setIsMounted(true);
     }, []);
 
-    useEffect(() => {
-        if (emblaApi) emblaApi.on('select', onSelect)
-    }, [emblaApi, onSelect])
-
-    useEffect(() => {
-        emblaApi && emblaApi.scrollTo(activeIndex);
-    }, [activeIndex]);
+    if (!isMounted) {
+        return null;
+    }
 
     return (
         <div className={"mt-32 md:mt-96 mb-40 relative"} id="careerSection">
@@ -37,138 +28,64 @@ export const CareerSection = () => {
             <h2 className="font-bold text-2xl md:text-4xl mb-5 md:mb-10">
                 Career
             </h2>
-            <p className="text-sm opacity-30 font-light mb-2 hidden md:block">
+            <p className="text-sm opacity-30 mb-2 hidden md:block">
                 Hover below or drag cards to see details
             </p>
 
-            <div className="flex flex-col md:flex-row gap-2 md:gap-10 -ms-8 -mr-4 md:-ms-10 md:-mr-0">
+
+            {
+                isMobile ?
+                    <MobileCarousel/>
+
+                    :
+                    <DesktopCarousel/>
+            }
+        </div>
+    );
+}
+
+
+export const DetailCard = ({active, title, from, to, companyUrl, company, description, skills}) => {
+
+
+    return (
+        <div
+            className={`${active ? "" : "opacity-40"} hover:opacity-100 transition-opacity bg-white
+            dark:bg-darkCard transition-colors embla__slide 
+            rounded-lg py-5 px-4 md:px-8 md:pt-8 md:pb-5 cursor-grab active:cursor-grabbing`}>
+
+            <span className="flex items-center mb-1 gap-1">
+                <CalendarIcon width={15} className="text-secondary inline-block mb-1"/>
+                {from}
+                <span className="text-secondary">→</span>
+                {to}
+            </span>
+
+
+            <h2 className="text-xl font-bold md:text-3xl my-2">
+                {title}
+            </h2>
+
+            <a href={companyUrl} target="_blank" className="text-secondary font-medium" rel="noopener">
+                {company}
+            </a>
+
+            <div className="border-t border-primary/10 dark:border-white/10 mt-4"/>
+
+            <div className="ps-5 md:mt-4 pt-4 max-w-[700px]">
+                <ul className="list-disc">
+                    {description.split("\n").map(line =>
+                        <li key={line} className="mb-2">{line}</li>
+                    )}
+                </ul>
+            </div>
+
+            <div className="flex flex-wrap md:flex-nowrap gap-2 mt-8 md:mt-12">
 
                 {
-                    isMobile ?
-                        <>
-
-                            <div className="embla-mobile px-3">
-                                <div className="embla__viewport-mobile" ref={emblaRef}>
-
-
-                                    <div className="embla__container-mobile">
-
-                                        {
-                                            careerExperiences.map(({
-                                                                       id,
-                                                                       title,
-                                                                       from,
-                                                                       to,
-                                                                       companyUrl,
-                                                                       company,
-                                                                       description
-                                                                   }) => (
-                                                <div key={id}
-                                                     className={`embla__slide-mobile bg-white dark:bg-darkCard rounded-lg p-4 cursor-grab active:cursor-grabbing ${id !== careerExperiences.length ? "me-5" : ""}`}>
-
-                                            <span className="text-sm font-light flex items-center mb-1 gap-1">
-                                                <CalendarIcon width={15} className="text-secondary inline-block mb-1"/>
-                                                {from}<span className="text-secondary">→</span> {to}
-                                            </span>
-
-
-                                                    <h2 className="text-2xl my-2">{title}</h2>
-
-                                                    <a href={companyUrl} target="_blank"
-                                                       className="text-secondary text-sm" rel="noopener">{company}</a>
-
-
-                                                    <p className="mt-4">
-                                                        {description}
-                                                    </p>
-
-
-                                                </div>
-                                            ))
-                                        }
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                            <div className="flex align-start overflow-auto px-3 mt-2 gap-x-2 mx-auto">
-                                {
-                                    careerExperiences.map((experience, index) => (
-                                        <PreviewCardMobile key={experience.id} active={index === activeIndex}
-                                                           onCardClick={() => setActiveIndex(index)}/>
-                                    ))
-                                }
-                            </div>
-                        </>
-                        :
-                        <>
-
-                            <div className="px-3 gap-x-2 min-w-[350px] w-[350px]">
-                                {
-                                    careerExperiences.map((experience, index) => (
-                                        <PreviewCard key={experience.id} active={index === activeIndex} {...experience}
-                                                     index={index}
-                                                     onCardHover={(i) => setActiveIndex(i)}/>
-                                    ))
-                                }
-                            </div>
-
-                            <div className="w-full relative overflow-hidden -mt-10 -mb-10">
-                                <div
-                                    className="absolute h-10 top-0 left-0 w-full bg-gradient-to-b from-light dark:from-primary to-transparent z-10"/>
-                                <div
-                                    className="absolute h-10 bottom-0 left-0 w-full bg-gradient-to-t from-light dark:from-primary to-transparent z-10"/>
-
-
-                                <div className="absolute top-0 left-0 w-full h-full py-10">
-
-                                    <div className="embla">
-
-                                        <div className="embla__viewport" ref={emblaRef}>
-
-
-                                            <div className="embla__container">
-
-                                                {
-                                                    careerExperiences.map(({
-                                                                               id,
-                                                                               title,
-                                                                               from,
-                                                                               to,
-                                                                               companyUrl,
-                                                                               company,
-                                                                               description,
-                                                                               skills
-                                                                           }, i) => (
-                                                        <div key={id}
-                                                             className={`${activeIndex === i ? "" : "opacity-80"} hover:opacity-100 transition-opacity bg-white dark:bg-darkCard transition-colors embla__slide rounded-lg px-6 pt-6 pb-3 cursor-grab active:cursor-grabbing ${id !== careerExperiences.length ? "mb-9" : ""}`}>
-
-                                                        <span
-                                                            className="text-sm font-light flex items-center mb-1 gap-1">
-                                                            <CalendarIcon width={15}
-                                                                          className="text-secondary inline-block mb-1"/>
-                                                            {from}<span className="text-secondary">→</span> {to}
-                                                        </span>
-
-
-                                                            <h2 className="text-2xl my-2">{title}</h2>
-
-                                                            <a href={companyUrl} target="_blank"
-                                                               className="text-secondary text-sm font-medium"
-                                                               rel="noopener">{company}</a>
-
-
-                                                            <p className="mt-4 opacity-75 border-t border-primary/10 dark:border-white/10 pt-4">
-                                                                {description}
-                                                            </p>
-
-                                                            <div className="flex gap-x-2 mt-12">
-
-                                                                {
-                                                                    !!skills?.length && skills.map(({src, alt}, i) =>
-                                                                            <div
-                                                                                className="flex items-center rounded px-3 py-2 rounded bg-light dark:bg-primary/20">
+                    !!skills?.length && skills.map(({src, alt}, i) =>
+                        <div key={src}
+                             className="flex items-center rounded px-3 py-2 rounded bg-light dark:bg-primary/20">
 
                                                             <span style={{width: 17, height: 17}}>
                                                                 <img
@@ -179,67 +96,15 @@ export const CareerSection = () => {
                                                                     height={17}
                                                                 />
                                                             </span>
-                                                                                <span className="pl-2 opacity-70">{alt}</span>
-                                                                            </div>
-                                                                    )
-                                                                }
-                                                            </div>
-
-
-                                                        </div>
-                                                    ))
-                                                }
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </>
+                            <span className="pl-2 opacity-70">{alt}</span>
+                        </div>
+                    )
                 }
-
-
             </div>
+
+
         </div>
-    );
+    )
+
+
 }
-
-
-const PreviewCardMobile = ({active, onCardClick}) => (
-    <div className={`w-[50px] h-1 transition-colors ${active ? "bg-secondary" : "bg-darkCard"}`}
-         onClick={onCardClick}/>
-);
-const PreviewCard = ({index, onCardHover, from, to, title, active, company, skills, description, companyUrl}) => (
-    <div
-        className={`bg-white transition-opacity dark:bg-darkCard pt-4 pb-3 px-5 ${active ? "border-r-2 border-secondary" : "opacity-80"}  ${index !== careerExperiences.length - 1 ? " mb-6" : ""}`}
-        onMouseEnter={() => onCardHover(index)}>
-            <span className="text-sm font-light flex items-center mb-1 gap-1">
-                <CalendarIcon width={15} className={"text-secondary inline-block mb-1"}/>
-                {from}<span className="text-secondary">→</span> {to}
-            </span>
-
-        <h3 className="font-medium text-xl mb-4">{title}</h3>
-
-        <div className="flex items-center gap-x-3 mb-1">
-
-            {
-                !!skills?.length && skills.map(({src, alt}, i) =>
-                    <img
-                        key={i}
-                        src={src}
-                        alt={alt + " logo"}
-                        width={14}
-                        height={14}
-                    />
-                )
-            }
-        </div>
-
-
-        <a href={companyUrl} target="_blank" className={"text-secondary font-medium text-sm"}
-           rel="noopener">{company}</a>
-
-    </div>
-)

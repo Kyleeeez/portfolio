@@ -1,4 +1,11 @@
-export const skills = {
+export type Skill = {
+    [key: string]: {
+        src: string,
+        alt: string
+    }
+}
+
+export const skills = <Skill>{
     react: {
         src: "/images/react.svg",
         alt: "React"
@@ -31,6 +38,7 @@ export const skills = {
 
 export type experience = {
     id: number,
+    location: string,
     from: string,
     to: string,
     title: string,
@@ -40,53 +48,62 @@ export type experience = {
     skills: Array<Record<string, string>>,
 }
 
-
 export const careerExperiences: experience[] = [
     {
         id: 1,
+        location: 'Full remote',
         from: "June 2022",
         to: "Current",
         title: "Senior Frontend Developer",
         company: "lastminute.com",
         companyUrl: "https://lastminute.com",
-        description: "Software development in React + MobX, TypeScript, GitLab.\n" +
-            "Agile workflow with Jira",
+        description: "Development and maintaining of the checkout flow in React, TypeScript, MobX, Styled Components Unit tests with Jest, Enzyme, RTL \n" +
+            "Active collaboration with UI/UX team, providing \n" +
+            "GitLab for version control and code reviews\n" +
+            "Agile methodologies to plan and track tasks progress (Jira) ",
         skills: [skills.react, skills.js]
 
     },
     {
         id: 2,
+        location: 'Rome, Hybrid remote',
         from: "Jan. 2020",
         to: "May 2022",
-        title: "React developer, UI Designer",
+        title: "Lead Frontend Developer, UI Designer",
         company: "Seedble",
         companyUrl: "https://seedble.com",
-        description: "Webapps development in React (NextJS), Angular7 (+ Ionic), HTML5 and SCSS (Bootstrap and Tailwind).\n" +
-            "UI / UX design and prototyping in Figma.\n" +
-            "Occasional backend development (NodeJS)\n" +
-            "Task-based workflow (Asana/ClickUp + GitHub)",
+        description: "Identification of requirements and UX design specifications for client applications development\n" +
+            "App development in React, NextJS, Typescript, SCSS (Bootstrap)\n" +
+            "UI/UX design and prototyping in Figma\n" +
+            "Mobile app development in Capacitor + React\n" +
+            "Agile workflow (GitHub + ClickUp) ",
         skills: [skills.react, skills.js, skills.figma, skills.css, skills.html, skills.next]
 
     },
     {
         id: 3,
+        location: 'Rome, Italy',
         from: "Dec. 2018",
         to: "Dec. 2019",
         title: "Angular developer, UI Designer",
         company: "Tutored",
         companyUrl: "https://tutored.me",
-        description: "Company webapp development in Angular2+, HTML5 and SCSS (Bootstrap). UI / UX design and prototyping in Sketch, Figma, Principle and Zeplin. Task-based workflow, Git + Jira, with Agile methodology.",
+        description: "Company webapp development in Angular6, Typescript and SCSS\n" +
+            "UI/UX design and prototyping in Figma + Zeplin\n" +
+            "Task-based workflow, Git + Jira, with Agile methodology (biweekly sprints)",
         skills: [skills.angular, skills.figma, skills.css, skills.js, skills.html]
     },
     {
         id: 4,
+        location: 'Rome, Italy',
         from: "Dec. 2015",
         to: "Dec. 2018",
         title: "Frontend Developer, UI/UX Designer, Global Professional Services team Developer",
         company: "Qmatic Italy",
         companyUrl: "https://qmatic.com",
-        description: "Webpages development in HTML5, CSS, JS(+jQuery).\n" +
-            "UI/UX design in Adobe Illustrator and Figma (clients: TIM, Pandora,Fastweb) Global Professional Services Developer: Working with global team (15+) of front-end developers. Daily+weekly meetings.",
+        description: "Apps development in JavaScript(+jQuery), CSS3, HTML5\n" +
+            "UI design and prototyping in Figma, Adobe Illustrator\n" +
+            "Member of the Global Professional Services, company’s distributed team of frontend engineers.",
         skills: [skills.js, skills.css, skills.figma, skills.html]
     }
 ]

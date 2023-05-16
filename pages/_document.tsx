@@ -6,12 +6,13 @@ class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='' />
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap"
                         rel="stylesheet"/>
                 </Head>
-                <body className="bg-light dark:bg-primary text-primary dark:text-light transition-colors">
+                <body className="bg-light dark:bg-primary text-primary dark:text-light transition-colors antialiased">
                     <Main/>
                     <NextScript/>
                 </body>

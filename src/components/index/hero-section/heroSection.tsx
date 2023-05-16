@@ -4,6 +4,7 @@ import React, {useState, useEffect, useMemo} from "react";
 import {loader, splineContainer} from "./heroSection.module.scss";
 import dynamic from 'next/dynamic';
 import {Bulb} from "../../bulb";
+import useIsMobile from "../../../hooks/isMobile";
 
 
 export const HeroSection = () => {
@@ -11,9 +12,13 @@ export const HeroSection = () => {
     const [loaded, setLoaded] = useState(false);
     const [Spline, setSpline] = useState(null);
 
+    const isMobile = useIsMobile();
+
+
+
     useEffect(() => {
-        setSpline(window.innerWidth > 768 ? dynamic(() => import('@splinetool/react-spline')) : null);
-    }, []);
+        setSpline(!isMobile ? dynamic(() => import('@splinetool/react-spline')) : null);
+    }, [isMobile]);
 
     return (
         <>
@@ -22,18 +27,20 @@ export const HeroSection = () => {
 
                 <Bulb/>
 
-                <p className={"font-light text-2xl pb-0 mt-0 md:mb-2"}>
+                <p className={"text-2xl pb-0 mt-0 md:mb-2"}>
                     Hi, I'm
                 </p>
-                <h1 className={"font-semibold tracking-normal text-4xl md:text-5xl mb-2"}>
+                <h1 className={"font-display text-5xl md:text-7xl"}>
                     Francesco Palomba
                 </h1>
-                <h2 className={"text-secondary font-light text-xl md:text-2xl leading-tight mb-4"}>
-                    Senior frontend developer<span className="text-primary dark:text-white">,<br className="md:hidden"/></span> UI
-                    designer
+
+                <h2 className={"font-medium text-md md:text-lg tracking-[0.098em] text-secondary uppercase mb-4"}>
+                    Senior frontend developer
+                    <span className="text-primary dark:text-white px-1">&<br className="md:hidden"/></span>
+                    UI designer
                 </h2>
 
-                <p className="tracking-wide dark:font-light mb-10 w-full md:text-lg">
+                <p className="mb-10 w-full md:text-lg">
                     I'm {new Date().getFullYear() - 1995} years old, with <span
                     className="text-secondary">{new Date().getFullYear() - 2016}+ years experience </span>in turning
                     my

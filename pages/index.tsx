@@ -1,4 +1,4 @@
-import {HeroSection} from "../src/components/index/heroSection/heroSection";
+import {HeroSection} from "../src/components/index/hero-section/heroSection";
 import {Navbar} from "../src/components/_navbar/navbar";
 import {CareerSection} from "../src/components/index/career-section/career-section";
 
@@ -9,7 +9,7 @@ export default function Home() {
 
             <Navbar />
 
-            <main className="md:container tracking-wide mx-4 ps-4 md:ps-6 mt-56 border-s-2 border-white dark:border-white/10">
+            <main className="container tracking-wide mt-60 md:mt-72 border-s-2 border-white dark:border-white/10">
 
                 <HeroSection />
 
