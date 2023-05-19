@@ -30,11 +30,11 @@ export const HeroSection = () => {
                 <p className={"text-2xl pb-0 mt-0 md:mb-2"}>
                     Hi, I'm
                 </p>
-                <h1 className={"font-display text-5xl md:text-7xl"}>
+                <h1 className={"font-display text-5xl md:text-[5rem]"}>
                     Francesco Palomba
                 </h1>
 
-                <h2 className={"font-medium text-md md:text-lg tracking-[0.098em] text-secondary uppercase mb-4"}>
+                <h2 className={"font-medium text-md md:text-[1.24rem] tracking-[0.1em] text-secondary uppercase mb-4"}>
                     Senior frontend developer
                     <span className="text-primary dark:text-white px-1">&<br className="md:hidden"/></span>
                     UI designer

@@ -26,7 +26,7 @@ export const DesktopCarousel = () => {
     return (
         <div className="flex gap-10 -ms-6 -mt-2">
 
-            <div className="px-3 md:px-0 gap-x-2 min-w-[350px] w-[350px]">
+            <div className="px-3 md:px-0 gap-x-2 min-w-[400px] w-[400px]">
                 {
                     careerExperiences.map((experience, index) => (
                         <PreviewCard key={experience.id} active={index === activeIndex} {...experience}
@@ -38,9 +38,9 @@ export const DesktopCarousel = () => {
 
             <div className="w-full relative overflow-hidden -mt-10 -mb-10">
                 <div
-                    className="absolute h-5 top-0 left-0 w-full bg-gradient-to-b from-light dark:from-dark to-transparent z-10"/>
+                    className="absolute h-5 top-0 left-0 w-full bg-gradient-to-b from-light dark:from-dark to-transparent z-10 pointer-events-none"/>
                 <div
-                    className="absolute h-5 bottom-0 left-0 w-full bg-gradient-to-t from-light dark:from-dark to-transparent z-10"/>
+                    className="absolute h-5 bottom-0 left-0 w-full bg-gradient-to-t from-light dark:from-dark to-transparent z-10 pointer-events-none"/>
 
 
                 <div className="absolute top-0 left-0 w-full h-full py-10">
@@ -75,10 +75,10 @@ export const DesktopCarousel = () => {
 }
 
 
-const PreviewCard = ({index, onCardHover, from, to, title, active, company, skills, description, companyUrl}) => (
+const PreviewCard = ({index, onCardHover, from, to, title, active, company, companyUrl}) => (
     <div className={`
              border-l-2 border-secondary bg-white transition-opacity dark:bg-dark pt-5 pb-3 px-5 
-            ${active ? "dark:bg-gradient-to-r dark:from-secondary/20 dark:to-dark" : "opacity-40"} 
+            ${active ? "dark:bg-gradient-to-r dark:from-secondary/20 dark:to-50% dark:to-darkCard/50" : "opacity-60"} 
             ${index !== careerExperiences.length - 1 ? " mb-6" : ""}
         `}
         onMouseEnter={() => onCardHover(index)}>

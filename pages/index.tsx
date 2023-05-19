@@ -1,6 +1,7 @@
 import {HeroSection} from "../src/components/index/hero-section/heroSection";
 import {Navbar} from "../src/components/_navbar/navbar";
 import {CareerSection} from "../src/components/index/career-section/career-section";
+import {CubeSVG} from "../src/components/SVGs/cube";
 
 export default function Home() {
 
@@ -8,6 +9,9 @@ export default function Home() {
         <>
 
             <Navbar />
+
+
+            <CubeSVG  className="absolute -left-20 top-[700px] -rotate-12 opacity-60" />
 
             <main className="container tracking-wide mt-60 md:mt-72 border-s-2 border-white dark:border-white/10">
 

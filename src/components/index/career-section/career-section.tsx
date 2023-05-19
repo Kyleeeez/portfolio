@@ -14,13 +14,13 @@ export const CareerSection = () => {
 
             <Bulb/>
 
-            <h2 className="font-bold text-2xl md:text-4xl mb-5 md:mb-10">
+            <h2 className="font-bold text-2xl md:text-4xl md:mb-5">
                 Career
             </h2>
-            <p className="text-sm opacity-30 mb-2 hidden md:block">
+
+            <p className="text-sm opacity-30 mb-5 hidden md:block">
                 Hover below or drag cards to see details
             </p>
-
 
             {
                 isMobile ?
@@ -38,9 +38,9 @@ export const DetailCard = ({active, title, from, to, companyUrl, company, descri
 
     return (
         <div
-            className={`${active ? "" : "opacity-40"} hover:opacity-100 transition-opacity bg-white
-            dark:bg-darkCard transition-colors embla__slide 
-            rounded-lg py-5 px-4 md:px-8 md:pt-8 md:pb-5 cursor-grab active:cursor-grabbing`}>
+            className={`${active ? "" : "opacity-40"} hover:opacity-100 transition-opacity 
+            bg-white dark:bg-darkCard transition-colors  
+            rounded-lg py-5 px-4 md:px-8 md:pt-8 md:pb-5 cursor-grab active:cursor-grabbing embla__slide`}>
 
             <span className="flex items-center mb-1 gap-1">
                 <CalendarIcon width={15} className="text-secondary inline-block mb-1"/>

@@ -41,15 +41,15 @@ a {
 }
 
 .btn{
-  @apply text-lg items-center pl-3 pr-5 py-2 rounded cursor-pointer active:scale-95 transition-all flex gap-x-1
+  @apply text-lg items-center pl-3 pr-5 py-2 rounded cursor-pointer active:scale-95 transition-all flex gap-x-1;
 }
 
 .btn.primary{
-  @apply bg-secondary text-white hover:bg-secondary/50
+  @apply bg-secondary text-white hover:bg-secondary/70;
 }
 
 .btn.secondary{
-  @apply bg-slate-700 text-white/90 hover:bg-slate-600
+  @apply bg-slate-700 text-white/90 hover:bg-slate-600;
 }
 
 .embla {
@@ -75,16 +75,4 @@ a {
   flex: 0 0 var(--slide-size);
   min-height: 0;
   position: relative;
-}
-
-
-.embla-mobile {
-  overflow: hidden;
-}
-.embla__container-mobile {
-  display: flex;
-}
-.embla__slide-mobile {
-  flex: 0 0 100%;
-  min-width: 0;
 }

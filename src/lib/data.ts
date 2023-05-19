@@ -57,7 +57,8 @@ export const careerExperiences: experience[] = [
         title: "Senior Frontend Developer",
         company: "lastminute.com",
         companyUrl: "https://lastminute.com",
-        description: "Development and maintaining of the checkout flow in React, TypeScript, MobX, Styled Components Unit tests with Jest, Enzyme, RTL \n" +
+        description: "Development and maintaining of the checkout flow in React, TypeScript, MobX, Styled Components\n" +
+            "Unit tests with Jest, Enzyme, RTL \n" +
             "Active collaboration with UI/UX team, providing \n" +
             "GitLab for version control and code reviews\n" +
             "Agile methodologies to plan and track tasks progress (Jira) ",
@@ -98,7 +99,7 @@ export const careerExperiences: experience[] = [
         location: 'Rome, Italy',
         from: "Dec. 2015",
         to: "Dec. 2018",
-        title: "Frontend Developer, UI/UX Designer, Global Professional Services team Developer",
+        title: "JavaScript developer, UI designer",
         company: "Qmatic Italy",
         companyUrl: "https://qmatic.com",
         description: "Apps development in JavaScript(+jQuery), CSS3, HTML5\n" +
