@@ -30,7 +30,7 @@ export const HeroSection = () => {
                 <p className={"text-2xl pb-0 mt-0 md:mb-2"}>
                     Hi, I'm
                 </p>
-                <h1 className={"font-display text-5xl md:text-[5rem]"}>
+                <h1 className={"font-display text-5xl md:text-[5rem] whitespace-nowrap"}>
                     Francesco Palomba
                 </h1>
 
