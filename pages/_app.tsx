@@ -1,10 +1,10 @@
 import "../styles/index.scss";
 import "../styles/globals.scss";
 
-import {ThemeProvider} from "next-themes";
+import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 
-function MyApp({Component, pageProps}) {
+function MyApp({ Component, pageProps }) {
 
     return (
         <>

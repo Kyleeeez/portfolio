@@ -1,11 +1,9 @@
-export type Skill = {
-    [key: string]: {
-        src: string,
-        alt: string
-    }
-}
+export type Skill = Record<string, {
+    src: string,
+    alt: string
+}>;
 
-export const skills = <Skill>{
+export const skills = {
     react: {
         src: "/images/react.svg",
         alt: "React"
@@ -34,9 +32,9 @@ export const skills = <Skill>{
         src: "/images/angular.svg",
         alt: "Angular"
     },
-}
+} satisfies Skill
 
-export type experience = {
+export interface experience {
     id: number,
     location: string,
     from: string,

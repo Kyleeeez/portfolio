@@ -1,6 +1,6 @@
-import {careerExperiences} from "../../../../lib/data";
-import React, {useState} from "react";
-import {DetailCard} from "../career-section";
+import { careerExperiences } from "../../../../lib/data";
+import React, { useState } from "react";
+import { DetailCard } from "../career-section";
 
 export const MobileCarousel = () => {
 
@@ -15,7 +15,7 @@ export const MobileCarousel = () => {
 
         const quarter = Math.floor(scrollPercentage / 25) + 1;
 
-        setActiveIndex(quarter - 1);
+        setActiveIndex(Math.min(quarter - 1, 3));
 
     }
 
@@ -23,20 +23,20 @@ export const MobileCarousel = () => {
 
         <div className="-mx-6">
 
+            <div className="align-start mx-auto my-3 ms-4 flex gap-x-2 overflow-auto px-3">
 
-            <div className="flex align-start overflow-auto px-3 ms-4 my-3 gap-x-2 mx-auto">
                 {
                     careerExperiences.map((experience, index) => (
-                        <Stepper key={experience.id} active={index === activeIndex} />
+                        <Stepper key={experience.id} active={index === activeIndex}/>
                     ))
                 }
             </div>
 
-            <div onScroll={onScroll} className="snap-x flex overflow-auto snap-mandatory">
+            <div onScroll={onScroll} className="flex snap-x snap-mandatory overflow-auto">
 
                 {
-                    careerExperiences.map((experience, i) => (
-                        <div key={experience.id} className="w-[calc(100vw-3rem)] px-3 shrink-0 snap-start">
+                    careerExperiences.map((experience) => (
+                        <div key={experience.id} className="w-[calc(100vw-3rem)] shrink-0 snap-start px-3">
                             <DetailCard {...experience} active={true}/>
                         </div>
                     ))
@@ -48,7 +48,6 @@ export const MobileCarousel = () => {
 
 }
 
-
-const Stepper = ({active}) => (
-    <div className={`w-[50px] h-1 transition-colors ${active ? "bg-secondary" : "bg-darkCard/10 dark:bg-darkCard"}`}/>
+const Stepper = ({ active }) => (
+    <div className={`h-1 w-[50px] transition-colors ${active ? "bg-secondary" : "bg-darkCard/10 dark:bg-darkCard"}`}/>
 );
