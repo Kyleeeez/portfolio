@@ -18,7 +18,7 @@ export const DesktopCarousel = () => {
     }, [emblaApi, onSelect])
 
     useEffect(() => {
-        emblaApi && emblaApi.scrollTo(activeIndex)
+        !!emblaApi && emblaApi.scrollTo(activeIndex)
     }, [activeIndex])
 
     return (
