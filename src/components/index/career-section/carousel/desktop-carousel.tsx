@@ -10,7 +10,7 @@ export const DesktopCarousel = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ axis: 'y', align: 0 })
 
     const onSelect = useCallback((emblaApi) => {
-        setActiveIndex(emblaApi.selectedScrollSnap())
+        if (emblaApi) setActiveIndex(emblaApi.selectedScrollSnap())
     }, [])
 
     useEffect(() => {
