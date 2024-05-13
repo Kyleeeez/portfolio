@@ -44,6 +44,20 @@ export const DesktopCarousel = () => {
 
                 <div className='absolute left-0 top-0 h-full w-full py-10'>
                     <div className='embla'>
+                        <div className='embla__viewport' ref={emblaRef}>
+                            <div className='embla__container'>
+                                {careerExperiences.map((experience, i) => (
+                                    <div
+                                        key={experience.id}
+                                        onClick={() => {
+                                            setActiveIndex(i)
+                                        }}
+                                        className={i !== careerExperiences.length ? 'mb-5' : ''}>
+                                        <div>ciao</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
