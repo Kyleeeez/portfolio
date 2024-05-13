@@ -1,6 +1,5 @@
 import { HeroSection } from '../src/components/index/hero-section/heroSection'
 import { Navbar } from '../src/components/_navbar/navbar'
-import { CareerSection } from '../src/components/index/career-section/career-section'
 import { CubeSVG } from '../src/SVGs/cube'
 import { CogIcon } from '@heroicons/react/outline'
 
@@ -16,8 +15,6 @@ export default function Home() {
             <main className='container mt-60 border-s-2 border-white tracking-wide dark:border-white/10 md:mt-72'>
 
                 <HeroSection />
-
-                <CareerSection />
 
             </main>
 
