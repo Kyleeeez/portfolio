@@ -1,12 +1,14 @@
-import { careerExperiences } from "../../../../lib/data";
-import React, { useState } from "react";
-import { DetailCard } from "../career-section";
+import { careerExperiences } from '../../../../lib/data'
+import React, { useState } from 'react'
+import { DetailCard } from '../career-section'
 
 export const MobileCarousel = () => {
 
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
     const onScroll = (e) => {
+        if (!e) return;
+
         const scrollWidth = e.currentTarget.scrollWidth;
         const scrollX = e.currentTarget.scrollLeft;
         const innerWidth = e.currentTarget.clientWidth;
@@ -27,7 +29,7 @@ export const MobileCarousel = () => {
 
                 {
                     careerExperiences.map((experience, index) => (
-                        <Stepper key={experience.id} active={index === activeIndex}/>
+                        <Stepper key={experience.id} active={index === activeIndex} />
                     ))
                 }
             </div>
@@ -37,7 +39,7 @@ export const MobileCarousel = () => {
                 {
                     careerExperiences.map((experience) => (
                         <div key={experience.id} className="w-[calc(100vw-3rem)] shrink-0 snap-start px-3">
-                            <DetailCard {...experience} active={true}/>
+                            <DetailCard {...experience} active={true} />
                         </div>
                     ))
                 }
@@ -49,5 +51,5 @@ export const MobileCarousel = () => {
 }
 
 const Stepper = ({ active }) => (
-    <div className={`h-1 w-[50px] transition-colors ${active ? "bg-secondary" : "bg-darkCard/10 dark:bg-darkCard"}`}/>
+    <div className={`h-1 w-[50px] transition-colors ${active ? "bg-secondary" : "bg-darkCard/10 dark:bg-darkCard"}`} />
 );
