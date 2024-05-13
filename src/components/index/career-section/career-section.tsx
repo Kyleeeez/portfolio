@@ -1,6 +1,7 @@
 import React from 'react'
 import { Bulb } from '../../bulb'
 import { DesktopCarousel } from './carousel/desktop-carousel'
+import { MobileCarousel } from './carousel/mobile-carousel'
 import { CalendarIcon } from '@heroicons/react/outline'
 import useIsMobile from '../../../hooks/isMobile'
 
@@ -21,7 +22,12 @@ export const CareerSection = () => {
                 Hover below or drag cards to see details
             </p>
 
-            <DesktopCarousel />
+            {
+                isMobile ?
+                    <MobileCarousel />
+                    :
+                    <DesktopCarousel />
+            }
         </div>
     )
 }
