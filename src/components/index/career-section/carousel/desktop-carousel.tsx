@@ -22,6 +22,31 @@ export const DesktopCarousel = () => {
 
     return (
         <div className='-ms-6 -mt-2 flex gap-10'>
+            <div className='w-[200px] shrink-0 gap-x-2 px-3 md:px-0 lg:w-[400px]'>
+                {careerExperiences.map((experience, index) => (
+                    <PreviewCard
+                        key={experience.id}
+                        active={index === activeIndex}
+                        {...experience}
+                        index={index}
+                        onCardHover={(i) => {
+                            setActiveIndex(i)
+                        }}
+                    />
+                ))}
+            </div>
+
+            <div className='relative -my-10 w-full overflow-hidden'>
+                <div
+                    className='pointer-events-none absolute left-0 top-0 z-10 h-5 w-full bg-gradient-to-b from-light to-transparent dark:from-dark' />
+                <div
+                    className='pointer-events-none absolute bottom-0 left-0 z-10 h-5 w-full bg-gradient-to-t from-light to-transparent dark:from-dark' />
+
+                <div className='absolute left-0 top-0 h-full w-full py-10'>
+                    <div className='embla'>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
