@@ -2,6 +2,7 @@ import { careerExperiences } from '../../../../lib/data'
 import { CalendarIcon } from '@heroicons/react/outline'
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import { DetailCard } from '../career-section'
 
 export const DesktopCarousel = () => {
     const [activeIndex, setActiveIndex] = useState<number>(0)
@@ -53,7 +54,7 @@ export const DesktopCarousel = () => {
                                             setActiveIndex(i)
                                         }}
                                         className={i !== careerExperiences.length ? 'mb-5' : ''}>
-                                        <div>ciao</div>
+                                        <DetailCard {...experience} active={i === activeIndex} />
                                     </div>
                                 ))}
                             </div>
