@@ -2,7 +2,6 @@ import React from 'react'
 import { Bulb } from '../../bulb'
 import { DesktopCarousel } from './carousel/desktop-carousel'
 import { MobileCarousel } from './carousel/mobile-carousel'
-import { CalendarIcon } from '@heroicons/react/outline'
 import useIsMobile from '../../../hooks/isMobile'
 
 export const CareerSection = () => {
@@ -14,11 +13,11 @@ export const CareerSection = () => {
 
             <Bulb />
 
-            <h2 className='text-2xl font-bold md:mb-5 md:text-4xl'>
+            <h2 className='text-2xl font-bold md:mb-2 md:text-4xl'>
                 Career
             </h2>
 
-            <p className='mb-5 hidden text-sm opacity-30 md:block'>
+            <p className='hidden pb-3 ps-1 text-sm text-white/40 md:block'>
                 Hover below or drag cards to see details
             </p>
 
@@ -36,16 +35,31 @@ export const DetailCard = ({ active, title, from, to, companyUrl, company, descr
 
     return (
         <div
-            className={`${(active) ? '' : 'opacity-40'} embla__slide cursor-grab 
-            rounded-lg bg-white px-4  
-            py-5 transition-all hover:opacity-100 active:cursor-grabbing dark:bg-darkCard md:px-8 md:pb-5 md:pt-8`}>
+            className={`${(active) ? '' : 'opacity-40'}
+            cursor-grab rounded-lg bg-white   px-4
+            py-5 transition-all hover:opacity-100 active:cursor-grabbing dark:bg-darkCard/50 md:px-8 md:py-3`}>
 
-            <span className='mb-1 flex items-center gap-1'>
-                <CalendarIcon width={15} className='mb-1 inline-block text-secondary' />
-                {from}
-                <span className='text-secondary'>→</span>
-                {to}
+        <span className='mb-1 flex items-end gap-2 text-sm font-medium lg:text-xl'>
+
+            <span className='whitespace-nowrap'>
+                <div>
+                    <span className='text-xs uppercase opacity-50'>From</span>
+                    <br />
+                    {from}
+                </div>
             </span>
+            <span className='text-secondary'>→</span>
+
+            <span className='whitespace-nowrap'>
+                <div>
+                    <span className='text-xs uppercase opacity-50'>To</span>
+                    <br />
+                    {to}
+                    {to === 'Current' &&
+                        <span className='ms-1 animate-pulse text-2xl leading-3 text-secondary'>•</span>}
+                </div>
+            </span>
+        </span>
 
             <h2 className='my-2 text-xl font-bold md:text-3xl'>
                 {title}

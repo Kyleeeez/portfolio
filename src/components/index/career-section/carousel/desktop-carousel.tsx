@@ -1,67 +1,61 @@
 import { careerExperiences } from '../../../../lib/data'
-import { CalendarIcon } from '@heroicons/react/outline'
-import React, { useCallback, useEffect, useState } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
+import React, { useRef, useState } from 'react'
 import { DetailCard } from '../career-section'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import Slider from 'react-slick'
 
 export const DesktopCarousel = () => {
-    const [activeIndex, setActiveIndex] = useState<number>(0)
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ axis: 'y', align: 0 })
+    const [slide, setSlide] = useState(0)
 
-    const onSelect = useCallback((emblaApi) => {
-        if (emblaApi) setActiveIndex(emblaApi.selectedScrollSnap())
-    }, [])
-
-    useEffect(() => {
-        if (emblaApi) emblaApi.on('select', onSelect)
-    }, [emblaApi, onSelect])
-
-    useEffect(() => {
-        if (emblaApi) emblaApi.scrollTo(activeIndex)
-    }, [activeIndex])
+    const settings = {
+        dots: true,
+        vertical: true,
+        verticalSwiping: true,
+        speed: 300,
+        infinite: false,
+        slidesToShow: 1.2,
+        slidesToScroll: 1,
+        beforeChange: (current, next) => {
+            setSlide(Math.round(next))
+        },
+    }
+    let sliderRef = useRef(null)
 
     return (
-        <div className='-ms-6 -mt-2 flex gap-10'>
-            <div className='w-[200px] shrink-0 gap-x-2 px-3 md:px-0 lg:w-[400px]'>
+        <div className='-ms-[53px] -mt-[2px] flex gap-4 ps-7'>
+            <div className='mb-3 flex flex-col gap-3 border-white/10'>
                 {careerExperiences.map((experience, index) => (
                     <PreviewCard
                         key={experience.id}
-                        active={index === activeIndex}
+                        active={index === slide}
                         {...experience}
                         index={index}
                         onCardHover={(i) => {
-                            setActiveIndex(i)
+                            sliderRef.slickGoTo(i)
                         }}
                     />
                 ))}
             </div>
+            <div className='slider-container'>
+                <Slider {...settings} ref={slider => {
+                    sliderRef = slider
+                }}>
 
-            <div className='relative -my-10 w-full overflow-hidden'>
-                <div
-                    className='pointer-events-none absolute left-0 top-0 z-10 h-5 w-full bg-gradient-to-b from-light to-transparent dark:from-dark' />
-                <div
-                    className='pointer-events-none absolute bottom-0 left-0 z-10 h-5 w-full bg-gradient-to-t from-light to-transparent dark:from-dark' />
-
-                <div className='absolute left-0 top-0 h-full w-full py-10'>
-                    <div className='embla'>
-                        <div className='embla__viewport' ref={emblaRef}>
-                            <div className='embla__container'>
-                                {careerExperiences.map((experience, i) => (
-                                    <div
-                                        key={experience.id}
-                                        onClick={() => {
-                                            setActiveIndex(i)
-                                        }}
-                                        className={i !== careerExperiences.length ? 'mb-5' : ''}>
-                                        <DetailCard {...experience} active={i === activeIndex} />
-                                    </div>
-                                ))}
-                            </div>
+                    {careerExperiences.map((experience, i) => (
+                        <div
+                            key={experience.id}
+                            className={'w-[500px] pb-4'}
+                            onClick={() => sliderRef.slickGoTo(i)}
+                        >
+                            <DetailCard {...experience} active={slide === i} />
                         </div>
-                    </div>
-                </div>
+                    ))}
+
+                </Slider>
             </div>
+
         </div>
     )
 }
@@ -69,23 +63,36 @@ export const DesktopCarousel = () => {
 const PreviewCard = ({ index, onCardHover, from, to, title, active, company, companyUrl }) => (
     <div
         className={`
-             border-l-2 border-secondary px-5 pb-3  pt-5 transition-opacity
-            ${active ? 'bg-white:50 border-l-4 dark:bg-gradient-to-r dark:from-secondary/20 dark:to-darkCard/50 dark:to-10%' : ' bg-white opacity-70 dark:bg-darkCard/20 '} 
-            ${index !== careerExperiences.length - 1 ? ' mb-6' : ''}
+             border-s-2 border-secondary pb-3 pr-10 ps-5 pt-2  transition-opacity
+            ${active ? 'bg-white:50 dark:bg-gradient-to-r dark:from-secondary/20 dark:to-darkCard/50 dark:to-10%' : 'cursor-pointer bg-white opacity-70 dark:bg-darkCard/20  dark:hover:bg-darkCard/50 '} 
+            ${index !== careerExperiences.length - 1 ? ' ' : ''}
         `}
-        onMouseEnter={() => onCardHover(index)}>
-        <span className='mb-1 flex  items-center gap-1 text-sm font-medium lg:text-xl'>
-            <CalendarIcon width={20} className={'mb-1 me-1 inline-block shrink-0 text-secondary'} />
-            <span className='whitespace-nowrap'>{from}</span>
+        onClick={() => onCardHover(index)}>
+        <span className='mb-1 flex  items-end gap-2 text-sm font-medium lg:text-xl'>
+
+            <span className='whitespace-nowrap'>
+                <div>
+                    <span className='text-xs uppercase opacity-50'>From</span>
+                    <br />
+                    {from}
+                </div>
+            </span>
             <span className='text-secondary'>→</span>
 
-            <span className='whitespace-nowrap'>{to}</span>
+            <span className='whitespace-nowrap'>
+                <div>
+                    <span className='text-xs uppercase opacity-50'>To</span>
+                    <br />
+                    {to}
+                    {to === 'Current' &&
+                        <span className='ms-1 animate-pulse text-2xl leading-3 text-secondary'>•</span>}
+                </div>
+            </span>
         </span>
 
-        <h3 className='mb-4'>{title}</h3>
+        <h2 className='my-2 text-lg font-semibold'>
+            {title}
+        </h2>
 
-        <a href={companyUrl} target='_blank' className={'text-sm font-medium text-secondary'} rel='noopener noreferrer'>
-            {company}
-        </a>
     </div>
 )
