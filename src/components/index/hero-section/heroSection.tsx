@@ -1,4 +1,4 @@
-import { ChatAltIcon, ChevronDoubleDownIcon } from '@heroicons/react/solid'
+import { ChevronDoubleDownIcon, MailIcon } from '@heroicons/react/solid'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import { loader, splineContainer } from './heroSection.module.scss'
@@ -56,14 +56,12 @@ export const HeroSection = () => {
                         <ChevronDoubleDownIcon className='h-5 w-5' /> My story
                     </button>
 
-                    <button
+                    <a
+                        href='mailto:palomba.fra@gmail.com'
                         className='btn secondary'
-                        aria-label="Let's talk"
-                        onClick={() => {
-                            document.getElementById('chatSection').scrollIntoView({ behavior: 'smooth' })
-                        }}>
-                        <ChatAltIcon className='mr-1 h-5 w-5 opacity-80' /> Let's talk
-                    </button>
+                        aria-label="Let's talk">
+                        <MailIcon className='mr-1 h-5 w-5 opacity-80' /> Let's talk
+                    </a>
                 </div>
             </div>
 
