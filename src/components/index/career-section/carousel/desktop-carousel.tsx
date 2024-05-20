@@ -52,7 +52,7 @@ export const DesktopCarousel = () => {
                               if (e.deltaY > 0) {
                                   sliderRef.slickNext()
 
-                                  if (slide === careerExperiences.length) {
+                                  if (slide === careerExperiences.length - 1) {
                                       setEnableBlock(false)
                                   } else {
                                       setEnableBlock(true)

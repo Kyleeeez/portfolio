@@ -18,7 +18,7 @@ export const CareerSection = () => {
             </h2>
 
             <p className='hidden pb-3 ps-1 text-sm text-white/40 md:block'>
-                Hover below or drag cards to see details
+                You can click below, scroll, or drag cards to navigate
             </p>
 
             {
