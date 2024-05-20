@@ -28,6 +28,7 @@ export const createActivateNewsletterUseCase: ActivateNewsletterUseCaseFactory =
   activateNewsletterService
 ) => ({
   // should raise WARN @typescript-eslint/explicit-function-return-type
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   async execute(token) {
     try {
       await activateNewsletterService.post({ url: '/cia-be/api/v1/newsletters/activate', body: { token } });

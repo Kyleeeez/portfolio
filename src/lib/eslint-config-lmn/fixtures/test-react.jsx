@@ -65,6 +65,7 @@ export default class CalendarDay extends React.Component {
       phrases: { chooseAvailableDate, dateIsUnavailable },
     } = this.props;
 
+    // eslint-disable-next-line jsx-a11y/control-has-associated-label
     if (!day) return <td />;
 
     const className = cx(

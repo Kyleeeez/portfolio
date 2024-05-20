@@ -1,33 +1,33 @@
 import { useEffect, useState } from 'react';
 
 const useIsMobile = (): boolean => {
-    const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(true);
 
-    useEffect(() => {
-        const checkIsMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-        let debounceTimer: ReturnType<typeof setTimeout>;
+    let debounceTimer: ReturnType<typeof setTimeout>;
 
-        const debounceResize = () => {
-            clearTimeout(debounceTimer);
-            debounceTimer = setTimeout(() => {
-                checkIsMobile();
-            }, 100);
-        };
-
+    const debounceResize = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
         checkIsMobile();
+      }, 100);
+    };
 
-        window.addEventListener('resize', debounceResize);
+    checkIsMobile();
 
-        return () => {
-            window.removeEventListener('resize', debounceResize);
-            clearTimeout(debounceTimer);
-        };
-    }, []);
+    window.addEventListener('resize', debounceResize);
 
-    return isMobile;
+    return () => {
+      window.removeEventListener('resize', debounceResize);
+      clearTimeout(debounceTimer);
+    };
+  }, []);
+
+  return isMobile;
 };
 
 export default useIsMobile;

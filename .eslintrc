@@ -1,10 +1,22 @@
 {
   "extends": "./src/lib/eslint-config-lmn",
   "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "jsx-a11y/control-has-associated-label": "warn",
     "react/no-this-in-sfc": "off",
     "react/require-default-props": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/no-use-before-define": "warn",
+    "react/button-has-type": "warn",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "warn",
+    "import/order": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "react/no-unescaped-entities": "warn",
+    "react/no-array-index-key": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
     "import/no-extraneous-dependencies": [
       "error",
       {
