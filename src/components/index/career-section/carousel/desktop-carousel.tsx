@@ -1,15 +1,14 @@
 import { careerExperiences } from '../../../../lib/data';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { DetailCard } from '../career-section';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { RemoveScroll } from 'react-remove-scroll';
 
-export const DesktopCarousel = () => {
+export const DesktopCarousel = ({ cvMode }) => {
   const [slide, setSlide] = useState(0);
   const [enableBlock, setEnableBlock] = useState(false);
-
   const settings = {
     dots: true,
     vertical: true,
@@ -23,6 +22,27 @@ export const DesktopCarousel = () => {
     },
   };
   let sliderRef = useRef(null);
+
+  useEffect(() => {
+    if (!cvMode) setSlide(0);
+  }, [cvMode]);
+
+  if (cvMode)
+    return (
+      <div className="-ms-[53px] -mt-[2px] ps-7 gap-4">
+        {careerExperiences.map((experience, index) => (
+          <div className="mb-5 flex gap-0">
+            <div className="w-[300px]">
+              <PreviewCard cvMode={cvMode} key={experience.id} active={true} {...experience} index={index} />
+            </div>
+            <div className="border-r-white/10 border-r bg-darkCard/50 py-5" />
+            <div className="flex-grow">
+              <DetailCard cvMode={cvMode} {...experience} active={true} />
+            </div>
+          </div>
+        ))}
+      </div>
+    );
 
   return (
     <div className="-ms-[53px] -mt-[2px] flex ps-7 gap-4">
@@ -68,7 +88,7 @@ export const DesktopCarousel = () => {
           }}
         >
           {careerExperiences.map((experience, i) => (
-            <div key={experience.id} className="w-[500px] mb-4" onClick={() => sliderRef.slickGoTo(i)}>
+            <div key={experience.id} className="mb-4" onClick={() => sliderRef.slickGoTo(i)}>
               <DetailCard {...experience} active={slide === i} />
             </div>
           ))}
@@ -78,7 +98,7 @@ export const DesktopCarousel = () => {
   );
 };
 
-const PreviewCard = ({ index, onCardHover, from, to, title, active, company, companyUrl }) => (
+const PreviewCard = ({ index, onCardHover, from, to, title, active, company, companyUrl, cvMode }) => (
   <div
     className={`
              border-s-2 border-secondary pb-3 pr-10 ps-5 pt-2  transition-opacity
@@ -86,10 +106,10 @@ const PreviewCard = ({ index, onCardHover, from, to, title, active, company, com
               active
                 ? 'bg-white:50 dark:bg-gradient-to-r dark:from-secondary/20 dark:to-darkCard/50 dark:to-10%'
                 : 'cursor-pointer bg-white opacity-70 dark:bg-darkCard/20  dark:hover:bg-darkCard/50 '
-            } 
-            ${index !== careerExperiences.length - 1 ? ' ' : ''}
+            }
+            ${cvMode ? ' rounded-none h-full  dark:from-darkCard/50' : ''} 
         `}
-    onClick={() => onCardHover(index)}
+    onClick={() => onCardHover && onCardHover(index)}
   >
     <span className="mb-1 flex  items-end gap-2 text-sm font-medium lg:text-xl">
       <span className="whitespace-nowrap">
@@ -112,6 +132,6 @@ const PreviewCard = ({ index, onCardHover, from, to, title, active, company, com
       </span>
     </span>
 
-    <h2 className="my-2 text-lg font-medium">{title}</h2>
+    {!cvMode && <h2 className="my-2 text-lg font-medium">{title}</h2>}
   </div>
 );
