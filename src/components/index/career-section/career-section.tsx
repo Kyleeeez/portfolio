@@ -74,16 +74,19 @@ export const DetailCard = ({ active, title, from, to, companyUrl, company, descr
       </ul>
     </div>
 
-    <div className="mt-8 flex flex-wrap gap-2 md:mt-12 md:flex-nowrap">
-      {!!skills?.length &&
-        skills.map(({ src, alt }, i) => (
-          <div key={src} className="flex items-center rounded bg-light px-3 py-2 dark:bg-dark/20">
-            <span style={{ width: 17, height: 17 }}>
-              <img key={i} src={src} alt={`${String(alt)} logo`} width={17} height={17} />
-            </span>
-            <span className="pl-2 opacity-70">{alt}</span>
-          </div>
-        ))}
+    <div className="mt-8 md:mt-12">
+      <div className="uppercase opacity-50 text-sm mb-2">Tech stack</div>
+      <div className="flex flex-wrap gap-2">
+        {!!skills?.length &&
+          skills.map(({ src, alt }, i) => (
+            <div key={src} className="flex items-center rounded bg-light px-3 py-2 dark:bg-dark/20">
+              <span style={{ width: 17, height: 17 }}>
+                <img key={i} src={src} alt={`${String(alt)} logo`} width={17} height={17} />
+              </span>
+              <span className="pl-2 opacity-70">{alt}</span>
+            </div>
+          ))}
+      </div>
     </div>
   </div>
 );

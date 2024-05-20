@@ -68,7 +68,7 @@ export const DesktopCarousel = () => {
           }}
         >
           {careerExperiences.map((experience, i) => (
-            <div key={experience.id} className="w-[500px] pb-4" onClick={() => sliderRef.slickGoTo(i)}>
+            <div key={experience.id} className="w-[500px] mb-4" onClick={() => sliderRef.slickGoTo(i)}>
               <DetailCard {...experience} active={slide === i} />
             </div>
           ))}
