@@ -1,0 +1,28 @@
+{
+  "extends": "./src/lib/eslint-config-lmn",
+  "rules": {
+    "react/no-this-in-sfc": "off",
+    "react/require-default-props": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.{spec,test}.{js,jsx,ts,tsx}",
+          "./config/**"
+        ]
+      }
+    ]
+  },
+  "globals": {
+    "browser": true,
+    "JSX": true
+  },
+  "settings": {
+    "import/core-modules": [
+      "react",
+      "react-dom"
+    ]
+  }
+}

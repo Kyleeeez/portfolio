@@ -1,0 +1,51 @@
+{
+  "name": "@lmn/eslint-config-lmn",
+  "description": "LMN Coding Standards",
+  "version": "8.0.3",
+  "license": "UNLICENSED",
+  "homepage": "http://www.lastminutegroup.com/",
+  "repository": "ssh://git@gitlab.lastminute.com/frontend-components/eslint-config-lmn.git",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6",
+    "eslint": "^8",
+    "eslint-config-airbnb": "^19",
+    "eslint-config-prettier": "^9",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-jsx-a11y": "^6",
+    "eslint-plugin-prettier": "^5",
+    "eslint-plugin-react": "^7",
+    "eslint-plugin-react-hooks": "^4",
+    "prettier": "^3",
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.31",
+    "react": "^18.2.0"
+  },
+  "scripts": {
+    "start": "./node_modules/eslint/bin/eslint.js './fixtures/*.{ts,tsx,js,jsx}'",
+    "fix": "./node_modules/eslint/bin/eslint.js './fixtures/*.{ts,tsx,js,jsx}' --fix",
+    "lint": "echo 0",
+    "build": "echo 0",
+    "test": "echo 0"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  }
+}

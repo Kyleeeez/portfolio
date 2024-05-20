@@ -4,14 +4,12 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     container: {
-      padding: "1.5rem",
+      padding: '1.5rem',
       center: true,
     },
     fontFamily: {
-      'display': ['Bebas Neue, sans-serif'],
-      sans: [
-        "Inter, sans-serif",
-      ],
+      display: ['Bebas Neue, sans-serif'],
+      sans: ['Inter, sans-serif'],
     },
     cursor: {
       pointer: 'pointer',
@@ -25,10 +23,9 @@ module.exports = {
         secondary: '#F43F5E',
         light: '#F3F6FF',
         darkCard: '#1B2033',
-      }
+      },
     },
   },
-  variants: {
-  },
-  plugins: []
-}
+  variants: {},
+  plugins: [],
+};

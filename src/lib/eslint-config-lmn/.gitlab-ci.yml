@@ -1,0 +1,10 @@
+include:
+  - project: infrastructure/ci/templates
+    file: workflows/workflows.yml
+  - project: infrastructure/ci/templates
+    file: frontend/v2/build.yml
+  - project: infrastructure/ci/templates
+    file: frontend/v2/publish-registry.yml
+
+variables:
+  NODEJS_VERSION: 18
