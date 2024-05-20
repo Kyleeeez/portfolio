@@ -49,7 +49,23 @@ export const DesktopCarousel = () => {
                               setEnableBlock(false)
                           }}
                           onWheel={e => {
-                              e.deltaY > 0 ? sliderRef.slickNext() : sliderRef.slickPrev()
+                              if (e.deltaY > 0) {
+                                  sliderRef.slickNext()
+
+                                  if (slide === careerExperiences.length) {
+                                      setEnableBlock(false)
+                                  } else {
+                                      setEnableBlock(true)
+                                  }
+                              } else {
+                                  sliderRef.slickPrev()
+
+                                  if (slide === 0) {
+                                      setEnableBlock(false)
+                                  } else {
+                                      setEnableBlock(true)
+                                  }
+                              }
                           }}
             >
                 <Slider {...settings} ref={slider => {
