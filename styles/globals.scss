@@ -54,3 +54,7 @@ a {
 .snap-x > * {
   scroll-snap-align: start;
 }
+
+.slick-prev, .slick-next {
+  display: none !important;
+}

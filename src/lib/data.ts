@@ -57,7 +57,7 @@ export const careerExperiences: experience[] = [
         companyUrl: 'https://lastminute.com',
         description: 'Development and maintaining of the checkout flow in React, TypeScript, MobX, Styled Components\n' +
             'Unit tests with Jest, Enzyme, RTL \n' +
-            'Active collaboration with UI/UX team, providing \n' +
+            'Active collaboration with UI/UX team \n' +
             'GitLab for version control and code reviews\n' +
             'Agile methodologies to plan and track tasks progress (Jira) ',
         skills: [skills.react, skills.js],

@@ -4,10 +4,12 @@ import { DetailCard } from '../career-section'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
+import { RemoveScroll } from 'react-remove-scroll'
 
 export const DesktopCarousel = () => {
 
     const [slide, setSlide] = useState(0)
+    const [enableBlock, setEnableBlock] = useState(false)
 
     const settings = {
         dots: true,
@@ -38,7 +40,18 @@ export const DesktopCarousel = () => {
                     />
                 ))}
             </div>
-            <div className='slider-container'>
+            <RemoveScroll className='slider-container' removeScrollBar={false}
+                          enabled={enableBlock}
+                          onMouseEnter={() => {
+                              setEnableBlock(true)
+                          }}
+                          onMouseLeave={() => {
+                              setEnableBlock(false)
+                          }}
+                          onWheel={e => {
+                              e.deltaY > 0 ? sliderRef.slickNext() : sliderRef.slickPrev()
+                          }}
+            >
                 <Slider {...settings} ref={slider => {
                     sliderRef = slider
                 }}>
@@ -54,7 +67,7 @@ export const DesktopCarousel = () => {
                     ))}
 
                 </Slider>
-            </div>
+            </RemoveScroll>
 
         </div>
     )
