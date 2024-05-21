@@ -87,7 +87,7 @@ export const DetailCard = ({
 
     <h2 className="mb-3 text-2xl font-medium md:text-3xl">{title}</h2>
 
-    <div className="flex gap-x-4 gap-y-2 overflow-auto text-md md:text-lg ">
+    <div className="flex gap-x-4 gap-y-2 overflow-auto text-sm md:text-lg ">
       <a
         href={companyUrl}
         target="_blank"
