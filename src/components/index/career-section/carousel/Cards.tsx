@@ -91,7 +91,7 @@ export const DetailCard = ({
       <a
         href={companyUrl}
         target="_blank"
-        className="*:hover:opacity-50 group flex items-center gap-1 hover:text-secondary whitespace-nowrap"
+        className="*:hover:opacity-50 group flex items-center gap-1 hover:text-secondary whitespace-nowrap rounded-full bg-darkCard px-2 py-0.5"
         rel="noopener noreferrer"
       >
         <AtSymbolIcon
@@ -106,12 +106,12 @@ export const DetailCard = ({
         {company}
       </a>
 
-      <div className="*:hover:opacity-50 group flex items-center gap-1 whitespace-nowrap">
+      <div className="*:hover:opacity-50 group flex items-center gap-1 whitespace-nowrap rounded-full bg-darkCard px-2 py-0.5">
         <DesktopComputerIcon width={20} className="inline-block text-secondary" />
         {location}
       </div>
 
-      <div className="*:hover:opacity-50 group flex items-center gap-1 whitespace-nowrap">
+      <div className="*:hover:opacity-50 group flex items-center gap-1 whitespace-nowrap rounded-full bg-darkCard px-2 py-0.5">
         <OfficeBuildingIcon width={20} className="inline-block text-secondary" />
         {HQ}
       </div>
