@@ -22,9 +22,7 @@ export const HeroSection = () => {
         <Bulb />
 
         <p className="mt-0 pb-0 text-2xl md:mb-2">Hi, I&apos;m</p>
-        <h1 className="whitespace-nowrap mb-2 font-display font-semibold text-5xl md:text-[4.5rem]">
-          Francesco Palomba
-        </h1>
+        <h1 className="mb-2 font-display font-semibold text-5xl md:text-[4.5rem]">Francesco Palomba</h1>
 
         <h2 className="text-md mb-4 font-medium uppercase tracking-[0.1em] text-secondary md:text-[1.24rem]">
           Senior frontend engineer

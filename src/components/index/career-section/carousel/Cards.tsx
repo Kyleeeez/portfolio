@@ -126,7 +126,7 @@ export const DetailCard = ({
         and designers through estimations, feasibility evaluations, and UX recommendations.
       </p>
 
-      <div className="uppercase opacity-50 text-sm mb-2">Main responsibilities</div>
+      <div className="uppercase opacity-50 text-xs md:text-sm mb-2">Main responsibilities</div>
       <ul className="ps-5 list-disc marker:text-secondary">
         {description.split('\n').map((line) => (
           <li key={line} className="mb-2">
@@ -139,7 +139,7 @@ export const DetailCard = ({
     <p className="hidden">Crucial activities</p>
 
     <div className="mt-8 md:mt-12">
-      <div className="uppercase opacity-50 text-sm mb-2">Tech stack</div>
+      <div className="uppercase opacity-50 text-xs md:text-sm mb-2">Tech stack</div>
       <div className="flex flex-wrap gap-2">
         {!!skills?.length &&
           skills.map(({ src, alt }, i) => (
