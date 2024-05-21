@@ -128,7 +128,8 @@ export const DetailCard = ({
         and designers through estimations, feasibility evaluations, and UX recommendations.
       </p>
 
-      <ul className="ps-5 list-disc">
+      <div className="uppercase opacity-50 text-sm mb-2">Main responsibilities</div>
+      <ul className="ps-5 list-disc marker:text-secondary">
         {description.split('\n').map((line) => (
           <li key={line} className="mb-2">
             {line}

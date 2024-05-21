@@ -28,14 +28,14 @@ export const Navbar = () => {
       animate={showNavbar ? { translateY: 0 } : { translateY: -85 }}
       className="fixed left-0 top-0 z-50 w-full border-b bg-light/40 backdrop-blur transition-colors dark:border-white/10 dark:bg-dark/40"
     >
-      <div className="container flex items-center justify-between py-5">
+      <div className="container px-4 md:px-0 flex items-center justify-between py-5">
         <Link href="/" legacyBehavior={true}>
           <a aria-label="Francesco Palomba's logo">
             <div className="relative flex h-10 items-center">
               <SVGLogo />
 
               <motion.div
-                className="absolute left-7 hidden pl-3 text-xl md:block"
+                className="absolute left-7 hidden pl-3 text-xl md:block font-medium"
                 style={{ lineHeight: 1.15 }}
                 transition={{ duration: 0.15 }}
                 initial={{ opacity: 0 }}
