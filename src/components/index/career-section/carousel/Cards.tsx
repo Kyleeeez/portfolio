@@ -1,5 +1,13 @@
 import React from 'react';
-import { ExternalLinkIcon, LocationMarkerIcon, OfficeBuildingIcon } from '@heroicons/react/solid';
+import {
+  AtSymbolIcon,
+  BriefcaseIcon,
+  DesktopComputerIcon,
+  ExternalLinkIcon,
+  LocationMarkerIcon,
+  OfficeBuildingIcon,
+} from '@heroicons/react/solid';
+import { GlobeAltIcon } from '@heroicons/react/outline';
 
 export const PreviewCard = ({ index, onCardHover, from, to, title, active, company, companyUrl, cvMode }) => (
   <div
@@ -38,7 +46,19 @@ export const PreviewCard = ({ index, onCardHover, from, to, title, active, compa
   </div>
 );
 
-export const DetailCard = ({ active, title, from, to, companyUrl, company, description, location, skills, cvMode }) => (
+export const DetailCard = ({
+  active,
+  title,
+  from,
+  to,
+  companyUrl,
+  company,
+  description,
+  location,
+  skills,
+  cvMode,
+  HQ,
+}) => (
   <div
     className={`${active ? '' : 'opacity-40'}
             rounded-lg bg-white px-4
@@ -50,24 +70,33 @@ export const DetailCard = ({ active, title, from, to, companyUrl, company, descr
       <div>
         <h2 className="mb-3 text-2xl font-medium md:text-3xl">{title}</h2>
 
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex gap-x-4 flex-wrap">
           <a
             href={companyUrl}
             target="_blank"
             className="text-lg *:hover:opacity-50 group flex items-center gap-1 hover:text-secondary"
             rel="noopener noreferrer"
           >
-            <LocationMarkerIcon width={20} className="inline-block text-secondary" />
-            {company}
+            <AtSymbolIcon
+              width={20}
+              className="inline-block text-secondary group-hover:-translate-y-2 group-hover:opacity-0 transition-all"
+            />
+
             <ExternalLinkIcon
               width={20}
-              className="text-white -translate-x-0.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+              className="absolute translate-y-1 hidden md:block opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all "
             />
+            {company}
           </a>
 
-          <div className="text-lg *:hover:opacity-50 group">
-            <OfficeBuildingIcon width={20} className="inline-block text-secondary mr-1.5 mb-1" />
+          <div className="text-lg *:hover:opacity-50 group flex items-center gap-1">
+            <DesktopComputerIcon width={20} className="inline-block text-secondary" />
             {location}
+          </div>
+
+          <div className="text-lg *:hover:opacity-50 group flex items-center gap-1">
+            <OfficeBuildingIcon width={20} className="inline-block text-secondary" />
+            {HQ}
           </div>
         </div>
       </div>

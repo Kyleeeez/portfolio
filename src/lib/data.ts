@@ -35,19 +35,32 @@ export const skills = {
     src: '/images/angular.svg',
     alt: 'Angular',
   },
+  mobx: {
+    src: '/images/mobx.svg',
+    alt: 'MobX',
+  },
   ts: {
     src: '/images/ts.svg',
     alt: 'TypeScript',
+  },
+  gitlab: {
+    src: '/images/gitlab.svg',
+    alt: 'GitLab',
+  },
+  jquery: {
+    src: '/images/jquery.svg',
+    alt: 'jQuery',
   },
 } satisfies Skill;
 
 export interface experience {
   id: number;
-  location: string;
   from: string;
   to: string;
   title: string;
   company: string;
+  HQ?: string;
+  location: string;
   companyUrl: string;
   description: string;
   skills: Array<Record<string, string>>;
@@ -56,6 +69,7 @@ export interface experience {
 export const careerExperiences: experience[] = [
   {
     id: 1,
+    HQ: 'CH, Switzerland',
     location: 'Full remote',
     from: 'June 2022',
     to: 'Current',
@@ -68,11 +82,12 @@ export const careerExperiences: experience[] = [
       'Active collaboration with UI/UX team \n' +
       'GitLab for version control and code reviews\n' +
       'Agile methodologies to plan and track tasks progress (Jira) ',
-    skills: [skills.react, skills.ts],
+    skills: [skills.react, skills.ts, skills.mobx, skills.gitlab],
   },
   {
     id: 2,
-    location: 'Rome, Hybrid remote',
+    HQ: 'Rome, Italy',
+    location: 'Remote/onsite',
     from: 'Jan. 2020',
     to: 'May 2022',
     title: 'Lead Frontend Engineer, UI Designer',
@@ -88,7 +103,8 @@ export const careerExperiences: experience[] = [
   },
   {
     id: 3,
-    location: 'Rome, Italy',
+    HQ: 'Rome, Italy',
+    location: 'Onsite',
     from: 'Dec. 2018',
     to: 'Dec. 2019',
     title: 'Angular developer, UI Designer',
@@ -102,7 +118,8 @@ export const careerExperiences: experience[] = [
   },
   {
     id: 4,
-    location: 'Rome, Italy',
+    HQ: 'Rome, Italy',
+    location: 'Onsite',
     from: 'Dec. 2015',
     to: 'Dec. 2018',
     title: 'JavaScript developer, UI designer',
@@ -112,7 +129,7 @@ export const careerExperiences: experience[] = [
       'Apps development in JavaScript(+jQuery), CSS3, HTML5\n' +
       'UI design and prototyping in Figma, Adobe Illustrator\n' +
       'Member of the Global Professional Services, company’s distributed team of frontend engineers.',
-    skills: [skills.js, skills.css, skills.figma, skills.html],
+    skills: [skills.js, skills.jquery, skills.css, skills.figma, skills.html],
   },
 ];
 
