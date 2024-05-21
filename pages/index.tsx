@@ -11,7 +11,7 @@ export default function Home() {
 
       <CubeSVG className="absolute -left-20 top-[700px] -rotate-12 opacity-60" />
 
-      <main className="container mt-60 border-s-2 border-white tracking-wide dark:border-white/10 md:mt-72">
+      <main className="container mt-60 border-s-2 border-darkCard/20 tracking-wide dark:border-white/10 md:mt-72 font-medium dark:font-normal">
         <HeroSection />
 
         <CareerSection />

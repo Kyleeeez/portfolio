@@ -1,10 +1,10 @@
 import { careerExperiences } from '../../../../lib/data';
 import React, { useEffect, useRef, useState } from 'react';
-import { DetailCard } from '../career-section';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { RemoveScroll } from 'react-remove-scroll';
+import { DetailCard, PreviewCard } from './Cards';
 
 export const DesktopCarousel = ({ cvMode }) => {
   const [slide, setSlide] = useState(0);
@@ -44,6 +44,29 @@ export const DesktopCarousel = ({ cvMode }) => {
       </div>
     );
 
+  const removeScrollOptions = {
+    className: 'slider-container',
+    removeScrollBar: false,
+    enabled: enableBlock,
+    onMouseEnter: () => {
+      setEnableBlock(true);
+    },
+    onMouseLeave: () => {
+      setEnableBlock(false);
+    },
+    onWheel: (e) => {
+      if (e.deltaY > 0) {
+        sliderRef.slickNext();
+        if (slide === careerExperiences.length - 1) setEnableBlock(false);
+        else setEnableBlock(true);
+      } else {
+        sliderRef.slickPrev();
+        if (slide === 0) setEnableBlock(false);
+        else setEnableBlock(true);
+      }
+    },
+  };
+
   return (
     <div className="-ms-[53px] -mt-[2px] flex ps-7 gap-4">
       <div className="mb-3 flex flex-col gap-3 border-white/10">
@@ -59,79 +82,23 @@ export const DesktopCarousel = ({ cvMode }) => {
           />
         ))}
       </div>
-      <RemoveScroll
-        className="slider-container"
-        removeScrollBar={false}
-        enabled={enableBlock}
-        onMouseEnter={() => {
-          setEnableBlock(true);
-        }}
-        onMouseLeave={() => {
-          setEnableBlock(false);
-        }}
-        onWheel={(e) => {
-          if (e.deltaY > 0) {
-            sliderRef.slickNext();
-            if (slide === careerExperiences.length - 1) setEnableBlock(false);
-            else setEnableBlock(true);
-          } else {
-            sliderRef.slickPrev();
-            if (slide === 0) setEnableBlock(false);
-            else setEnableBlock(true);
-          }
-        }}
-      >
-        <Slider
-          {...settings}
-          ref={(slider) => {
-            sliderRef = slider;
-          }}
-        >
-          {careerExperiences.map((experience, i) => (
-            <div key={experience.id} className="mb-4" onClick={() => sliderRef.slickGoTo(i)}>
-              <DetailCard {...experience} active={slide === i} />
-            </div>
-          ))}
-        </Slider>
+      <RemoveScroll {...removeScrollOptions}>
+        <div className="relative">
+          <div className="absolute h-10 w-full bottom-0 z-50 dark:bg-gradient-to-t dark:from-dark dark:to-100%" />
+          <Slider
+            {...settings}
+            ref={(slider) => {
+              sliderRef = slider;
+            }}
+          >
+            {careerExperiences.map((experience, i) => (
+              <div key={experience.id} className="mb-4" onClick={() => sliderRef.slickGoTo(i)}>
+                <DetailCard {...experience} active={slide === i} />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </RemoveScroll>
     </div>
   );
 };
-
-const PreviewCard = ({ index, onCardHover, from, to, title, active, company, companyUrl, cvMode }) => (
-  <div
-    className={`
-             border-s-2 border-secondary pb-3 pr-10 ps-5 pt-2  transition-opacity
-            ${
-              active
-                ? 'bg-white:50 dark:bg-gradient-to-r dark:from-secondary/20 dark:to-darkCard/50 dark:to-10%'
-                : 'cursor-pointer bg-white opacity-70 dark:bg-darkCard/20  dark:hover:bg-darkCard/50 '
-            }
-            ${cvMode ? ' rounded-none h-full  dark:from-darkCard/50' : ''} 
-        `}
-    onClick={() => onCardHover && onCardHover(index)}
-  >
-    <span className="mb-1 flex  items-end gap-2 text-sm font-medium lg:text-xl">
-      <span className="whitespace-nowrap">
-        <div>
-          <span className="text-xs uppercase opacity-50">From</span>
-          <br />
-          {from}
-        </div>
-      </span>
-      <span className="text-secondary">→</span>
-
-      <span className="whitespace-nowrap">
-        <div>
-          <span className="text-xs uppercase opacity-50">To</span>
-
-          <br />
-          {to}
-          {to === 'Current' && <span className="ms-1 animate-pulse text-2xl leading-3 text-secondary">•</span>}
-        </div>
-      </span>
-    </span>
-
-    {!cvMode && <h2 className="my-2 text-lg font-medium">{title}</h2>}
-  </div>
-);

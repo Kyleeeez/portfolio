@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { careerExperiences } from '../../../../lib/data';
-import { DetailCard } from '../career-section';
+import { DetailCard } from './Cards';
 
 export const MobileCarousel = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);

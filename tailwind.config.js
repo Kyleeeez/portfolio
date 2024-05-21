@@ -8,7 +8,7 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      display: ['Bebas Neue, sans-serif'],
+      display: ['Reddit Sans Condensed, sans-serif'],
       sans: ['Inter, sans-serif'],
     },
     cursor: {
