@@ -17,7 +17,7 @@ export const CareerSection = () => {
 
       <div className="flex justify-between items-end pb-3 ">
         <div>
-          <h2 className="text-2xl font-bold md:mb-2 md:text-4xl -mt-1">Career</h2>
+          <h2 className="text-3xl font-bold md:mb-2 md:text-4xl -mt-1">Career</h2>
 
           {cvMode ? (
             <p className="hidden ps-1 text-sm text-white/40 md:block">Scroll to navigate</p>

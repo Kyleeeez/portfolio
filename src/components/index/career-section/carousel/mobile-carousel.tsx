@@ -21,15 +21,15 @@ export const MobileCarousel = () => {
 
   return (
     <div className="-mx-6">
-      <div className="align-start mx-auto my-3 ms-4 flex gap-x-2 overflow-auto px-3">
+      <div className="align-start mx-auto mb-3 ms-4 flex gap-x-2 overflow-auto px-3">
         {careerExperiences.map((experience, index) => (
           <Stepper key={experience.id} active={index === activeIndex} />
         ))}
       </div>
 
-      <div onScroll={onScroll} className="flex snap-x snap-mandatory overflow-auto">
+      <div onScroll={onScroll} className="flex snap-x snap-mandatory overflow-auto pb-3">
         {careerExperiences.map((experience) => (
-          <div key={experience.id} className="w-[calc(100vw-3rem)] shrink-0 snap-start px-3">
+          <div key={experience.id} className="w-[calc(100vw-2rem)] shrink-0 snap-start px-2">
             <DetailCard {...experience} active={true} />
           </div>
         ))}

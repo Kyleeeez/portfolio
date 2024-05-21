@@ -8,6 +8,7 @@ import {
   OfficeBuildingIcon,
 } from '@heroicons/react/solid';
 import { GlobeAltIcon } from '@heroicons/react/outline';
+import { Opt } from '../../../../lib/data';
 
 export const PreviewCard = ({ index, onCardHover, from, to, title, active, company, companyUrl, cvMode }) => (
   <div
@@ -58,70 +59,67 @@ export const DetailCard = ({
   skills,
   cvMode,
   HQ,
-}) => (
+}: Opt<typeof DetailCard, 'cvMode'>) => (
   <div
     className={`${active ? '' : 'opacity-40'}
             rounded-lg bg-white px-4
-            py-5 pt-8 hover:opacity-100 dark:bg-darkCard/50 md:px-8 md:pb-3 transition-opacity
+            py-5 md:pt-8 hover:opacity-100 dark:bg-darkCard/50 md:px-8 md:pb-3 transition-opacity
             ${cvMode ? ' rounded-none rounded-r-xl' : ' cursor-grab active:cursor-grabbing '}
             `}
   >
-    <div className="flex justify-between items-start flex-wrap gap-3">
-      <div>
-        <h2 className="mb-3 text-2xl font-medium md:text-3xl">{title}</h2>
+    {!cvMode && (
+      <span className="flex md:hidden items-end gap-2 font-medium mb-5">
+        <span className="whitespace-nowrap flex flex-col">
+          <span className="text-xs uppercase opacity-50">From</span>
+          {from}
+        </span>
+        <span className="text-secondary">→</span>
 
-        <div className="flex gap-x-4 flex-wrap">
-          <a
-            href={companyUrl}
-            target="_blank"
-            className="text-lg *:hover:opacity-50 group flex items-center gap-1 hover:text-secondary"
-            rel="noopener noreferrer"
-          >
-            <AtSymbolIcon
-              width={20}
-              className="inline-block text-secondary group-hover:-translate-y-2 group-hover:opacity-0 transition-all"
-            />
-
-            <ExternalLinkIcon
-              width={20}
-              className="absolute translate-y-1 hidden md:block opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all "
-            />
-            {company}
-          </a>
-
-          <div className="text-lg *:hover:opacity-50 group flex items-center gap-1">
-            <DesktopComputerIcon width={20} className="inline-block text-secondary" />
-            {location}
-          </div>
-
-          <div className="text-lg *:hover:opacity-50 group flex items-center gap-1">
-            <OfficeBuildingIcon width={20} className="inline-block text-secondary" />
-            {HQ}
-          </div>
-        </div>
-      </div>
-      {!cvMode && (
-        <span className="flex md:hidden items-end gap-2 text-sm font-medium lg:text-xl">
-          <span className="whitespace-nowrap flex flex-col">
-            <span className="text-xs uppercase opacity-50">From</span>
-            {from}
-          </span>
-          <span className="text-secondary">→</span>
-
-          <span className="whitespace-nowrap flex flex-col">
-            <span className="text-xs uppercase opacity-50">To</span>
-            <span>
-              {to}
-              {to === 'Current' && <span className="ms-1 animate-pulse text-2xl leading-3 text-secondary">•</span>}
-            </span>
+        <span className="whitespace-nowrap flex flex-col">
+          <span className="text-xs uppercase opacity-50">To</span>
+          <span>
+            {to}
+            {to === 'Current' && <span className="ms-1 animate-pulse text-2xl leading-3 text-secondary">•</span>}
           </span>
         </span>
-      )}
+      </span>
+    )}
+
+    <h2 className="mb-3 text-2xl font-medium md:text-3xl">{title}</h2>
+
+    <div className="flex gap-x-4 gap-y-2 overflow-auto text-md md:text-lg ">
+      <a
+        href={companyUrl}
+        target="_blank"
+        className="*:hover:opacity-50 group flex items-center gap-1 hover:text-secondary whitespace-nowrap"
+        rel="noopener noreferrer"
+      >
+        <AtSymbolIcon
+          width={20}
+          className="inline-block text-secondary group-hover:-translate-y-2 group-hover:opacity-0 transition-all"
+        />
+
+        <ExternalLinkIcon
+          width={20}
+          className="absolute translate-y-1 hidden md:block opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all "
+        />
+        {company}
+      </a>
+
+      <div className="*:hover:opacity-50 group flex items-center gap-1 whitespace-nowrap">
+        <DesktopComputerIcon width={20} className="inline-block text-secondary" />
+        {location}
+      </div>
+
+      <div className="*:hover:opacity-50 group flex items-center gap-1 whitespace-nowrap">
+        <OfficeBuildingIcon width={20} className="inline-block text-secondary" />
+        {HQ}
+      </div>
     </div>
 
     <div className="mt-4 border-t border-primary/10 dark:border-white/10" />
 
-    <div className="pt-2 md:mt-4">
+    <div className="pt-2 mt-2 md:mt-4">
       <p className="mb-3 opacity-75 italic hidden">
         App/tests development, maintaining and ensuring the core functionality of services. My responsibilities also
         include migrating packages from on-premises environments to cloud platforms like AWS. Technical guidance to PMs,
