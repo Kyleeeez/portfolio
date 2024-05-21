@@ -19,6 +19,10 @@ export const skills = {
     src: '/images/css3.svg',
     alt: 'CSS3',
   },
+  scss: {
+    src: '/images/scss.svg',
+    alt: 'SCSS',
+  },
   js: {
     src: '/images/js.svg',
     alt: 'JS',
@@ -51,6 +55,10 @@ export const skills = {
     src: '/images/jquery.svg',
     alt: 'jQuery',
   },
+  styled: {
+    src: '/images/styled.png',
+    alt: 'styled',
+  },
 } satisfies Skill;
 
 export interface experience {
@@ -82,7 +90,7 @@ export const careerExperiences: experience[] = [
       'Active collaboration with UI/UX team \n' +
       'GitLab for version control and code reviews\n' +
       'Agile methodologies to plan and track tasks progress (Jira) ',
-    skills: [skills.react, skills.ts, skills.mobx, skills.gitlab],
+    skills: [skills.react, skills.ts, skills.mobx, skills.styled, skills.gitlab],
   },
   {
     id: 2,
@@ -99,7 +107,7 @@ export const careerExperiences: experience[] = [
       'UI/UX design and prototyping in Figma\n' +
       'Mobile app development in Capacitor + React\n' +
       'Agile workflow (GitHub + ClickUp) ',
-    skills: [skills.react, skills.ts, skills.next, skills.figma],
+    skills: [skills.react, skills.ts, skills.next, skills.scss, skills.figma],
   },
   {
     id: 3,
