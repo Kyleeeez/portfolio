@@ -24,6 +24,9 @@ module.exports = {
         light: '#F3F6FF',
         darkCard: '#1B2033',
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   variants: {},

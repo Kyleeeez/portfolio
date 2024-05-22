@@ -62,7 +62,7 @@ export const DetailCard = ({
 }: Opt<typeof DetailCard, 'cvMode'>) => (
   <div
     className={`${active ? '' : 'opacity-40'}
-            rounded-lg bg-white px-4
+            rounded-lg bg-white px-4 relative overflow-hidden
             py-5 md:pt-8 hover:opacity-100 dark:bg-darkCard/50 md:px-8 md:pb-3 transition-opacity
             ${cvMode ? ' rounded-none rounded-r-xl' : ' cursor-grab active:cursor-grabbing '}
             `}
@@ -85,9 +85,11 @@ export const DetailCard = ({
       </span>
     )}
 
+    <div className="absolute bg-gradient-radial from-secondary/5 to-70% h-[200%] w-3/4 -top-0 -translate-y-1/2 left-1/3" />
+
     <h2 className="mb-3 text-2xl font-medium md:text-3xl">{title}</h2>
 
-    <div className="flex gap-x-4 gap-y-2 overflow-auto text-sm md:text-lg ">
+    <div className="flex gap-x-4 gap-y-2 overflow-auto text-sm md:text-md">
       <a
         href={companyUrl}
         target="_blank"
