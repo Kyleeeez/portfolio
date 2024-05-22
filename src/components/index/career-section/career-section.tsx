@@ -13,7 +13,7 @@ export const CareerSection = () => {
 
   return (
     <div className="relative mb-40 mt-32 md:mt-96" id="careerSection">
-      <Bulb />
+      <Bulb small={true} />
 
       <div className="flex justify-between items-end pb-3 ">
         <div>

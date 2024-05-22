@@ -1,4 +1,5 @@
 import { CogIcon } from '@heroicons/react/outline';
+import React from 'react';
 import { HeroSection } from '../src/components/index/hero-section/heroSection';
 import { Navbar } from '../src/components/_navbar/navbar';
 import { CareerSection } from '../src/components/index/career-section/career-section';
