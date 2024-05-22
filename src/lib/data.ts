@@ -124,7 +124,7 @@ export const careerExperiences: experience[] = [
       'Company webapp development in Angular6, Typescript and SCSS\n' +
       'UI/UX design and prototyping in Figma + Zeplin\n' +
       'Task-based workflow, Git + Jira, with Agile methodology (biweekly sprints)',
-    skills: [skills.angular, skills.ts, skills.figma],
+    skills: [skills.angular, skills.ts, skills.scss, skills.figma],
   },
   {
     id: 4,
