@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { DocumentTextIcon } from '@heroicons/react/outline';
 import { Bulb } from '../../bulb';
 import { DesktopCarousel } from './carousel/desktop-carousel';
@@ -12,8 +11,10 @@ export const CareerSection = () => {
   const [cvMode, setCvMode] = useState(false);
 
   return (
-    <div className="relative mb-40 mt-32 md:mt-96" id="careerSection">
-      <Bulb small={true} />
+    <div className="relative mt-32 md:mt-96" id="careerSection">
+      <div className="absolute -left-[2.8rem]">
+        <Bulb />
+      </div>
 
       <div className="flex justify-between items-end pb-3 ">
         <div>

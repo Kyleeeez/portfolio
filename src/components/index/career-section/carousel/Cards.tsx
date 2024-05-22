@@ -85,7 +85,7 @@ export const DetailCard = ({
       </span>
     )}
 
-    <div className="absolute bg-gradient-radial from-secondary/5 to-70% h-[200%] w-3/4 -top-0 -translate-y-1/2 left-1/3" />
+    <div className="absolute bg-gradient-radial from-secondary/5 to-70% h-[200%] w-3/4 -top-0 -translate-y-1/2 left-1/3 -z-1" />
 
     <h2 className="mb-3 text-2xl font-medium md:text-3xl">{title}</h2>
 

@@ -21,7 +21,10 @@ export const HeroSection = () => {
       <div className="relative -translate-y-4">
         <div className="relative">
           <div className="absolute bg-gradient-radial from-secondary/10 to-70% h-[1000px] w-[1000px] -top-0 -translate-y-1/2  -translate-x-1/2 left-0 -z-1" />
-          <Bulb />
+
+          <div className="absolute -left-[2.8rem]">
+            <Bulb />
+          </div>
         </div>
 
         <p className="mt-0 pb-0 text-2xl md:mb-2">Hi, I&apos;m</p>
