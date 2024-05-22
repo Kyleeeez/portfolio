@@ -20,10 +20,8 @@ export const HeroSection = () => {
     <>
       <div className="relative -translate-y-4">
         <div className="relative">
-          <div className="absolute bg-gradient-radial from-secondary/10 to-70% h-[1000px] w-[1000px] -top-0 -translate-y-1/2  -translate-x-1/2 left-0 -z-1" />
-
           <div className="absolute -left-[2.8rem]">
-            <Bulb />
+            <Bulb light={true} />
           </div>
         </div>
 
@@ -60,10 +58,15 @@ export const HeroSection = () => {
           >
             <ChevronDoubleDownIcon className="h-5 w-5" /> My story
           </button>
-
-          <a href="mailto:palomba.fra@gmail.com" className="btn secondary" aria-label="Let's talk">
-            <MailIcon className="mr-1 h-5 w-5 opacity-80" /> Let&apos;s talk
-          </a>
+          <button
+            className="btn secondary"
+            aria-label="Let's talk"
+            onClick={() => {
+              document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            <ChevronDoubleDownIcon className="h-5 w-5" /> Let&apos;s talk
+          </button>
         </div>
       </div>
 

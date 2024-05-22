@@ -1,19 +1,12 @@
 import React from 'react';
-import {
-  AtSymbolIcon,
-  BriefcaseIcon,
-  DesktopComputerIcon,
-  ExternalLinkIcon,
-  LocationMarkerIcon,
-  OfficeBuildingIcon,
-} from '@heroicons/react/solid';
-import { GlobeAltIcon } from '@heroicons/react/outline';
+import { AtSymbolIcon, DesktopComputerIcon, ExternalLinkIcon, OfficeBuildingIcon } from '@heroicons/react/solid';
+import { ChevronRightIcon } from '@heroicons/react/outline';
 import { Opt } from '../../../../lib/data';
 
 export const PreviewCard = ({ index, onCardHover, from, to, title, active, company, companyUrl, cvMode }) => (
   <div
     className={`
-             border-s-2 border-secondary pb-3 pr-10 ps-5 pt-2  transition-opacity
+             border-s-2 border-secondary pb-3 pr-10 ps-5 pt-2  transition-opacity relative group
             ${
               active
                 ? 'bg-white:50 dark:bg-gradient-to-r dark:from-secondary/20 dark:to-darkCard/50 dark:to-10%'
@@ -44,6 +37,13 @@ export const PreviewCard = ({ index, onCardHover, from, to, title, active, compa
     </span>
 
     {!cvMode && <h2 className="my-2 text-lg font-medium">{title}</h2>}
+
+    <ChevronRightIcon
+      width={20}
+      className={`absolute right-1 top-1/2 -translate-y-1/2 transition-all opacity-0 
+      ${active ? 'translate-x-2  ' : ' -translate-x-1 group-hover:opacity-50 group-hover:translate-x-0 '}
+      `}
+    />
   </div>
 );
 

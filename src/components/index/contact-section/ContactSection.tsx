@@ -1,9 +1,9 @@
 import React from 'react';
-import { ChevronDoubleDownIcon, MailIcon, UserIcon } from '@heroicons/react/solid';
+import { MailIcon, UserIcon } from '@heroicons/react/solid';
 import { Bulb } from '../../bulb';
 
 export const ContactSection = () => (
-  <div className="relative container px-0" id="careerSection">
+  <div className="relative container px-0" id="contactSection">
     <div className="flex h-32">
       <div className="grow rounded-bl-full border-b-2 border-l-2 border-darkCard/20 dark:border-white/10  h-1/2" />
       <div className="w-32 flex">
@@ -14,7 +14,7 @@ export const ContactSection = () => (
     <div className="flex -mt-3">
       <div className="grow" />
       <div className="flex flex-col items-center">
-        <Bulb />
+        <Bulb light={true} />
         <h2 className="text-3xl font-bold my-3">Contacts</h2>
 
         <div className="flex flex-wrap gap-3">

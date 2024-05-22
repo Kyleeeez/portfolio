@@ -19,8 +19,31 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    setShowNavbar(scrollY <= lastScroll || scrollY < 100);
-    setLastScroll(scrollY);
+    let timeoutId;
+
+    const handleScroll = () => {
+      setShowNavbar(scrollY <= lastScroll || scrollY < 150);
+      setLastScroll(scrollY);
+
+      // Clear the previous timeout if it exists
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
+      // Set a new timeout to show the navbar after 3 seconds of no scrolling
+      timeoutId = setTimeout(() => {
+        setShowNavbar(lastScroll > 100);
+      }, 3000);
+    };
+
+    handleScroll();
+
+    return () => {
+      // Clear the timeout when the component unmounts
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, [scrollY]);
 
   return (
@@ -63,7 +86,7 @@ export const Navbar = () => {
             <button
               className=" opacity-50 hover:opacity-100"
               onClick={() => {
-                document.getElementById('chatSection').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
               }}
             >
               <span className="text-primary dark:text-white">Contact</span>
