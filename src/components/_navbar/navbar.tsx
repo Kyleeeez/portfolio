@@ -32,7 +32,7 @@ export const Navbar = () => {
 
       // Set a new timeout to show the navbar after 3 seconds of no scrolling
       timeoutId = setTimeout(() => {
-        setShowNavbar(lastScroll > 100);
+        setShowNavbar(true);
       }, 3000);
     };
 

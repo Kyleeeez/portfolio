@@ -29,7 +29,7 @@ export const DesktopCarousel = ({ cvMode }) => {
 
   if (cvMode)
     return (
-      <div className="-ms-[53px] -mt-[2px] ps-7 gap-4">
+      <div className="-ms-[55px] -mt-[2px] ps-7 gap-4">
         {careerExperiences.map((experience, index) => (
           <div className="mb-5 flex gap-0">
             <div className="w-[300px]">
@@ -68,7 +68,7 @@ export const DesktopCarousel = ({ cvMode }) => {
   };
 
   return (
-    <div className="-ms-[53px] -mt-[2px] flex ps-7 gap-4">
+    <div className="-ms-[55px] -mt-[2px] flex ps-7 gap-4">
       <div className="mb-3 flex flex-col gap-3 border-white/10">
         {careerExperiences.map((experience, index) => (
           <PreviewCard
@@ -77,14 +77,14 @@ export const DesktopCarousel = ({ cvMode }) => {
             {...experience}
             index={index}
             onCardHover={(i) => {
-              sliderRef.slickGoTo(i);
+              if (sliderRef) sliderRef.slickGoTo(i);
             }}
           />
         ))}
       </div>
       <RemoveScroll {...removeScrollOptions}>
         <div className="relative">
-          <div className="absolute h-10 w-full bottom-0 z-50 dark:bg-gradient-to-t dark:from-dark dark:to-100%" />
+          <div className="absolute h-10 w-full bottom-0 z-50 bg-gradient-to-t from-light dark:from-dark dark:to-100% pointer-events-none" />
           <Slider
             {...settings}
             ref={(slider) => {

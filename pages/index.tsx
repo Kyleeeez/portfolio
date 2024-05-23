@@ -5,6 +5,8 @@ import { Navbar } from '../src/components/_navbar/navbar';
 import { CareerSection } from '../src/components/index/career-section/career-section';
 import { CubeSVG } from '../src/SVGs/cube';
 import { ContactSection } from '../src/components/index/contact-section/ContactSection';
+import { EducationSection } from '../src/components/index/education-section/EducationSection';
+import { ProjectsSection } from '../src/components/index/projects-section/ProjectsSection';
 
 export default function Home() {
   return (
@@ -13,7 +15,7 @@ export default function Home() {
 
       <CubeSVG className="absolute -left-20 top-[700px] -rotate-12 opacity-60" />
 
-      <main className="container mt-60 border-s-2 pb-32 tracking-wide border-darkCard/20 dark:border-white/10 md:mt-72 font-medium dark:font-normal">
+      <main className="container mt-60 border-s-2 pb-32 border-darkCard/20 dark:border-white/10 md:mt-72">
         <HeroSection />
 
         <CareerSection />
