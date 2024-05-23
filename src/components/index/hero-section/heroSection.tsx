@@ -28,17 +28,19 @@ export const HeroSection = () => {
         <p className="mt-0 pb-0 text-2xl md:mb-2">Hi, I&apos;m</p>
         <h1 className="mb-2 font-display font-semibold text-5xl md:text-[4.5rem]">Francesco Palomba</h1>
 
-        <h2 className="text-md mb-4 font-medium uppercase tracking-[0.1em] text-secondary md:text-[1.24rem]">
+        <h2 className="text-md md:text-3xl mb-4 font-medium tracking-wide gradient-text-secondary">
           Senior frontend engineer
-          <span className="px-1 text-primary dark:text-white">
+          <span className="px-1 text-primary dark:text-white font-thin">
             &<br className="md:hidden" />
           </span>
-          UI designer
+          UX enthusiast
         </h2>
 
         <p className="mb-10 w-full md:text-lg">
           I&apos;m {new Date().getFullYear() - 1995} years old, with{' '}
-          <span className="text-secondary">{new Date().getFullYear() - 2016}+ years experience </span>
+          <span className="font-semibold gradient-text-secondary dark:font-normal tracking-wider">
+            {new Date().getFullYear() - 2016}+ years experience{' '}
+          </span>
           in turning my
           <span className="whitespace-nowrap"> designs into clean, robust code.</span>
           <br />

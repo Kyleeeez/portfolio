@@ -3,15 +3,13 @@ import { AtSymbolIcon, DesktopComputerIcon, ExternalLinkIcon, OfficeBuildingIcon
 import { ChevronRightIcon } from '@heroicons/react/outline';
 import { Opt } from '../../../../lib/data';
 
-const autoSelectTimeout = 2000;
-
 export const PreviewCard = ({ index, onCardHover, from, to, title, active, company, companyUrl, cvMode }) => {
   let timeoutId = null;
 
   const handleMouseEnter = () => {
     timeoutId = setTimeout(() => {
       if (onCardHover) onCardHover(index);
-    }, autoSelectTimeout); // Adjust the delay (in milliseconds) as needed
+    }, 2000); // Adjust the delay (in milliseconds) as needed
   };
 
   const handleMouseLeave = () => {
@@ -28,7 +26,7 @@ export const PreviewCard = ({ index, onCardHover, from, to, title, active, compa
             ${
               active
                 ? 'bg-white:50 dark:bg-gradient-to-r dark:from-secondary/20 dark:to-darkCard dark:to-10%  '
-                : 'cursor-pointer opacity-80 hover:opacity-100'
+                : 'cursor-pointer'
             }
             ${cvMode ? ' rounded-none h-full dark:bg-fixed dark:from-darkCard/50' : ''} 
         `}
@@ -43,7 +41,7 @@ export const PreviewCard = ({ index, onCardHover, from, to, title, active, compa
                 ? 'transition-none group-hover:duration-100 h-full '
                 : 'h-0  cursor-pointer opacity-80 hover:opacity-100 group-hover:transition-all group-hover:ease-linear '
             }
-        top-0 group-hover:h-full group-hover:duration-[${autoSelectTimeout / 1000}s] w-1 bg-secondary absolute left-0`}
+        top-0 group-hover:h-full group-hover:duration-[2s] w-1 bg-secondary absolute left-0`}
       />
 
       <span className="mb-1 flex font-medium items-end gap-2 text-sm lg:text-xl">
@@ -60,8 +58,11 @@ export const PreviewCard = ({ index, onCardHover, from, to, title, active, compa
           <div>
             <span className="text-xs uppercase opacity-50">To</span>
             <br />
-            {to}
-            {to === 'Current' && <span className="ms-1 animate-pulse text-2xl leading-3 text-secondary">•</span>}
+            {to === 'Current' ? (
+              <span className="ms-1 animate-pulse text-2xl leading-3 gradient-text-secondary">{to}</span>
+            ) : (
+              to
+            )}
           </div>
         </span>
       </span>
@@ -109,8 +110,11 @@ export const DetailCard = ({
         <span className="whitespace-nowrap flex flex-col">
           <span className="text-xs uppercase opacity-50">To</span>
           <span>
-            {to}
-            {to === 'Current' && <span className="ms-1 animate-pulse text-2xl leading-3 text-secondary">•</span>}
+            {to === 'Current' ? (
+              <span className="text-xl ms-1 animate-pulse leading-3 gradient-text-secondary">{to}</span>
+            ) : (
+              to
+            )}
           </span>
         </span>
       </span>
