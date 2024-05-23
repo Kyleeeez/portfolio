@@ -3,6 +3,7 @@ import React from 'react';
 type Variant = 'yellow' | 'blue';
 
 export const Bulb = ({ light, small, variant }: { light?: boolean; small?: boolean; variant?: Variant }) => {
+  // eslint-disable-next-line no-nested-ternary
   const colorClass = variant === 'yellow' ? 'yellow-500' : variant === 'blue' ? 'blue-500' : 'secondary';
 
   return (
