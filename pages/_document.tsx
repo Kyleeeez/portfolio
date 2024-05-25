@@ -13,7 +13,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="bg-light text-primary antialiased transition-colors dark:bg-dark dark:text-light">
+        <body className="bg-light text-primary transition-colors dark:bg-gradient-to-t dark:bg-dark dark:from-dark dark:to-secondary/[2%] dark:text-light">
           <Main />
           <NextScript />
         </body>

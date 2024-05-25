@@ -55,6 +55,10 @@ a {
   @apply text-secondary dark:text-transparent bg-clip-text bg-gradient-to-tr dark:from-secondary dark:to-[#FF8A48];
 }
 
+.bg-gradient-secondary {
+  @apply bg-gradient-to-tr dark:from-secondary dark:to-[#FF8A48];
+}
+
 .snap-x > * {
   scroll-snap-align: start;
 }

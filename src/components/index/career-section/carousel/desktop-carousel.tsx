@@ -29,9 +29,9 @@ export const DesktopCarousel = ({ cvMode }) => {
 
   if (cvMode)
     return (
-      <div className="-ms-[55px] -mt-[2px] ps-7 gap-4">
+      <div className="-ms-[55px] -mt-[2px] ps-7 gap-3">
         {careerExperiences.map((experience, index) => (
-          <div className="mb-5 flex gap-0">
+          <div className="mb-5 flex">
             <div className="w-[300px]">
               <PreviewCard cvMode={cvMode} key={experience.id} active={true} {...experience} index={index} />
             </div>
@@ -68,7 +68,7 @@ export const DesktopCarousel = ({ cvMode }) => {
   };
 
   return (
-    <div className="-ms-[55px] -mt-[2px] flex ps-7 gap-4">
+    <div className="-ms-[55px] -mt-[2px] flex ps-7 gap-3">
       <div className="mb-3 flex flex-col gap-3 border-white/10">
         {careerExperiences.map((experience, index) => (
           <PreviewCard
@@ -84,7 +84,7 @@ export const DesktopCarousel = ({ cvMode }) => {
       </div>
       <RemoveScroll {...removeScrollOptions}>
         <div className="relative">
-          <div className="absolute h-10 w-full bottom-0 z-50 bg-gradient-to-t from-light dark:from-dark dark:to-100% pointer-events-none" />
+          <div className="absolute h-10 w-full bottom-0 z-50 bg-gradient-to-t from-light dark:from-[#06081d] dark:to-100% pointer-events-none" />
           <Slider
             {...settings}
             ref={(slider) => {

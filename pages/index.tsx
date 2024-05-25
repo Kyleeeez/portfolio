@@ -3,7 +3,6 @@ import React from 'react';
 import { HeroSection } from '../src/components/index/hero-section/heroSection';
 import { Navbar } from '../src/components/_navbar/navbar';
 import { CareerSection } from '../src/components/index/career-section/career-section';
-import { CubeSVG } from '../src/SVGs/cube';
 import { ContactSection } from '../src/components/index/contact-section/ContactSection';
 import { EducationSection } from '../src/components/index/education-section/EducationSection';
 import { ProjectsSection } from '../src/components/index/projects-section/ProjectsSection';
@@ -13,12 +12,16 @@ export default function Home() {
     <>
       <Navbar />
 
-      <CubeSVG className="absolute -left-20 top-[700px] -rotate-12 opacity-60" />
-
       <main className="container mt-60 border-s-2 pb-32 border-darkCard/20 dark:border-white/10 md:mt-72">
         <HeroSection />
 
         <CareerSection />
+
+        {
+          // <EducationSection />
+        }
+
+        <ProjectsSection />
       </main>
 
       <ContactSection />

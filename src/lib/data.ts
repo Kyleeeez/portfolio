@@ -8,6 +8,19 @@ export type Skill = Record<
   }
 >;
 
+export interface experience {
+  id: number;
+  from: string;
+  to: string;
+  title: string;
+  company: string;
+  HQ?: string;
+  location: string;
+  companyUrl: string;
+  description: string;
+  skills: Array<Record<string, string>>;
+}
+
 export const skills = {
   react: {
     src: '/images/react.svg',
@@ -61,20 +74,15 @@ export const skills = {
     src: '/images/styled.png',
     alt: 'styled',
   },
+  firebase: {
+    src: '/images/firebase.svg',
+    alt: 'Firebase',
+  },
+  bootstrap: {
+    src: '/images/bootstrap.svg',
+    alt: 'Bootstrap',
+  },
 } satisfies Skill;
-
-export interface experience {
-  id: number;
-  from: string;
-  to: string;
-  title: string;
-  company: string;
-  HQ?: string;
-  location: string;
-  companyUrl: string;
-  description: string;
-  skills: Array<Record<string, string>>;
-}
 
 export const careerExperiences: experience[] = [
   {
@@ -109,7 +117,7 @@ export const careerExperiences: experience[] = [
       'UI/UX design and prototyping in Figma\n' +
       'Mobile app development in Capacitor + React\n' +
       'Agile workflow (GitHub + ClickUp) ',
-    skills: [skills.react, skills.ts, skills.next, skills.scss, skills.figma],
+    skills: [skills.react, skills.ts, skills.next, skills.scss, skills.figma, skills.bootstrap],
   },
   {
     id: 3,
@@ -157,5 +165,63 @@ export const educationExperiences = [
     title: 'Computer Expert Diploma',
     company: 'ITIS Enrico Fermi, Rome, Italy',
     description: 'Acquired basic level of programming languages HTML, CSS, PHP, MySql, JS, Java, C++.',
+  },
+];
+
+export interface project {
+  id?: number;
+  from: string;
+  to?: string;
+  title: string;
+  platforms: string;
+  userBase?: string;
+  premiumBase?: string;
+  description: string;
+  skills: Array<Record<string, string>>;
+  logo: {
+    src: string;
+    alt: string;
+  };
+  URL?: string;
+}
+
+export const projects: project[] = [
+  {
+    logo: {
+      src: '/images/projects/weeky-icon.svg',
+      alt: 'Weeky icon',
+    },
+    from: '2024',
+    title: 'Weeky',
+    platforms: 'App Store (to be relased)',
+    description: 'Personal finance budgeting app with a twist.',
+    skills: [skills.react, skills.ts, skills.firebase, skills.scss, skills.figma, skills.bootstrap],
+  },
+  {
+    logo: {
+      src: '/images/projects/carsapp-icon.svg',
+      alt: 'CarsApp logo',
+    },
+    from: '2018',
+    to: '2020',
+    title: 'CarsApp',
+    platforms: 'App Store, Google Play',
+    description: 'Personal vehicle management app built to sharpen my skills in mobile app development and UX.',
+    skills: [skills.react, skills.ts, skills.firebase, skills.scss, skills.figma, skills.bootstrap],
+    userBase: '10k+ active users',
+    premiumBase: '1k+ premium users',
+  },
+  {
+    logo: {
+      src: '/images/projects/3wl-logo.svg',
+      alt: '3 Words Legends logo',
+    },
+    from: '2016',
+    title: '3 Words Legends',
+    platforms: 'Webapp',
+    description: 'Web game to improve my algorithm and animation skills.',
+    skills: [skills.js, skills.css, skills.firebase, skills.figma],
+    userBase: '10k+ simultaneous players',
+    URL: 'https://wordslegends-bbc15.web.app/',
   },
 ];

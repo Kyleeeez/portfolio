@@ -13,7 +13,7 @@ export const EducationSection = () => {
   return (
     <div className="relative mt-32 md:mt-96" id="educationSection">
       <div className="absolute -left-[2.8rem]">
-        <Bulb />
+        <Bulb variant="blue" />
       </div>
 
       <div className="flex justify-between items-end pb-3 ">

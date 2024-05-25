@@ -25,10 +25,10 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <p className="mt-0 pb-0 text-2xl md:mb-2">Hi, I&apos;m</p>
-        <h1 className="mb-2 font-display font-semibold text-5xl md:text-[4.5rem]">Francesco Palomba</h1>
+        <p className="mt-0 pb-0 text-2xl mb-2">Hi, I&apos;m</p>
+        <h1 className="mb-2 md:mt-6 md:mb-5 font-display font-semibold text-4xl md:text-[4.5rem]">Francesco Palomba</h1>
 
-        <h2 className="text-md md:text-3xl mb-4 font-medium tracking-wide gradient-text-secondary">
+        <h2 className="text-2xl md:text-3xl mb-4 font-medium tracking-wide gradient-text-secondary">
           Senior frontend engineer
           <span className="px-1 text-primary dark:text-white font-thin">
             &<br className="md:hidden" />

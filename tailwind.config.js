@@ -28,6 +28,25 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
+      animation: {
+        blob: 'blob 14s infinite',
+      },
+      keyframes: {
+        blob: {
+          '0%': {
+            transform: 'translate(0px, 0px)',
+          },
+          '33%': {
+            transform: 'translate(30px, -50px)',
+          },
+          '66%': {
+            transform: 'translate(-20px, 20px)',
+          },
+          '100%': {
+            transform: 'tranlate(0px, 0px)',
+          },
+        },
+      },
     },
   },
   variants: {},

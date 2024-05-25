@@ -19,31 +19,8 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    let timeoutId;
-
-    const handleScroll = () => {
-      setShowNavbar(scrollY <= lastScroll || scrollY < 150);
-      setLastScroll(scrollY);
-
-      // Clear the previous timeout if it exists
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-
-      // Set a new timeout to show the navbar after 3 seconds of no scrolling
-      timeoutId = setTimeout(() => {
-        setShowNavbar(true);
-      }, 3000);
-    };
-
-    handleScroll();
-
-    return () => {
-      // Clear the timeout when the component unmounts
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    };
+    setShowNavbar(scrollY <= lastScroll || scrollY < 150);
+    setLastScroll(scrollY);
   }, [scrollY]);
 
   return (
