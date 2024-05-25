@@ -38,7 +38,7 @@ export const ProjectCard: React.FC<project> = ({
           <div className="flex gap-x-4 gap-y-2 overflow-auto md:flex-wrap text-sm md:text-md">
             {URL ? (
               <a
-                href=""
+                href={URL}
                 target="_blank"
                 className="*:hover:opacity-50 group flex items-center gap-1 hover:text-secondary whitespace-nowrap rounded-full bg-light dark:bg-dark/60 px-2 py-0.5"
                 rel="noopener noreferrer"
