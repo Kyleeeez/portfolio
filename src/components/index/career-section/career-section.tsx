@@ -5,8 +5,6 @@ import { DesktopCarousel } from './carousel/desktop-carousel';
 import { MobileCarousel } from './carousel/mobile-carousel';
 import useIsMobile from '../../../hooks/isMobile';
 import { AnimatedBlobs } from '../../Blobs';
-import { careerExperiences } from '../../../lib/data';
-import { DetailCard } from './carousel/Cards';
 
 export const CareerSection = () => {
   const isMobile = useIsMobile();
@@ -15,7 +13,7 @@ export const CareerSection = () => {
 
   return (
     <div className="relative mt-32 md:mt-96" id="careerSection">
-      <div className="absolute right-1/2 top-10">
+      <div className="absolute right-1/3 md:right-40 top-1/4 md:top-1/3">
         <AnimatedBlobs />
       </div>
 

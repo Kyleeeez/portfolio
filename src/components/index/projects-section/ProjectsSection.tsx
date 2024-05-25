@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { AtSymbolIcon, CurrencyDollarIcon, ExternalLinkIcon, UsersIcon } from '@heroicons/react/solid';
 import { Bulb } from '../../bulb';
-import { careerExperiences, project, projects } from '../../../lib/data';
+import { project, projects } from '../../../lib/data';
 import useIsMobile from '../../../hooks/isMobile';
-import { DetailCard } from '../career-section/carousel/Cards';
 
 export const ProjectCard: React.FC<project> = ({
   className,
@@ -97,7 +96,11 @@ export const ProjectsSection = () => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="relative mt-24">
+    <div className="relative mt-24 md:mt-32">
+      <div className="absolute right-1/3 md:right-1/2 top-1/4 md:top-10">
+        <AnimatedBlobs />
+      </div>
+
       <div className="flex items-center mb-8">
         <div className="absolute -left-[2.8rem]">
           <Bulb variant="yellow" />
@@ -156,4 +159,13 @@ export const MobileExperiences = () => {
 
 const Stepper = ({ active }) => (
   <div className={`h-1 w-[50px] transition-colors ${active ? 'bg-yellow-400' : 'bg-darkCard/10 dark:bg-darkCard'}`} />
+);
+
+const AnimatedBlobs = () => (
+  <div className="relative pb-52">
+    <div
+      className="absolute top-0 left-20 h-[300px] w-[300px]
+      bg-yellow-400 blur-3xl opacity-20 rounded-full animate-blob animation-delay-4000"
+    />
+  </div>
 );
