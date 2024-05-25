@@ -99,7 +99,7 @@ export const DetailCard = ({
   HQ,
 }: Opt<typeof DetailCard, 'cvMode'>) => (
   <div
-    className={`${active ? 'dark:from-dark dark:to-secondary/[5%] ' : 'opacity-50 '} hover:opacity-100 
+    className={`${active ? 'dark:from-dark/50 dark:to-secondary/[5%] ' : 'opacity-50 '} hover:opacity-100 
             rounded-3xl bg-white px-4 relative overflow-hidden border border-white/[3%]
             py-5 md:pt-8 backdrop-blur-lg  md:px-8 md:pb-3 transition-opacity
               dark:bg-gradient-to-tr dark:bg-dark/50 

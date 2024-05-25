@@ -1,14 +1,9 @@
-import React from 'react';
-import {
-  AtSymbolIcon,
-  CurrencyDollarIcon,
-  DesktopComputerIcon,
-  ExternalLinkIcon,
-  OfficeBuildingIcon,
-  UsersIcon,
-} from '@heroicons/react/solid';
+import React, { useState } from 'react';
+import { AtSymbolIcon, CurrencyDollarIcon, ExternalLinkIcon, UsersIcon } from '@heroicons/react/solid';
 import { Bulb } from '../../bulb';
-import { project, projects } from '../../../lib/data';
+import { careerExperiences, project, projects } from '../../../lib/data';
+import useIsMobile from '../../../hooks/isMobile';
+import { DetailCard } from '../career-section/carousel/Cards';
 
 export const ProjectCard: React.FC<project> = ({
   className,
@@ -25,8 +20,9 @@ export const ProjectCard: React.FC<project> = ({
 }: project) => (
   <div
     className={`
-            rounded-3xl bg-white p-7 pb-3 relative overflow-hidden border border-white/[3%] dark:bg-darkCard/50 backdrop-blur-lg
-            flex flex-col justify-between
+            dark:from-dark/50 dark:to-darkCard/50 dark:bg-gradient-to-tr dark:bg-dark/50
+            rounded-3xl bg-white px-4 relative overflow-hidden border border-white/[3%]
+            py-5 md:pt-8 backdrop-blur-lg  md:px-8 md:pb-3 transition-opacity            flex flex-col justify-between
      ${className}
     `}
   >
@@ -97,18 +93,67 @@ export const ProjectCard: React.FC<project> = ({
   </div>
 );
 
-export const ProjectsSection = () => (
-  <div className="relative mt-24">
-    <div className="flex items-center mb-8">
-      <div className="absolute -left-[2.8rem]">
-        <Bulb variant="yellow" />
+export const ProjectsSection = () => {
+  const isMobile = useIsMobile();
+
+  return (
+    <div className="relative mt-24">
+      <div className="flex items-center mb-8">
+        <div className="absolute -left-[2.8rem]">
+          <Bulb variant="yellow" />
+        </div>
+        <h1 className="text-3xl font-bold">Projects</h1>
       </div>
-      <h1 className="text-3xl font-bold">Projects</h1>
+
+      {isMobile ? (
+        <MobileExperiences />
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4">
+          <ProjectCard {...projects[0]} className="md:row-span-1 md:col-span-1" />
+          <ProjectCard {...projects[1]} className="md:row-span-1 md:col-span-1" />
+          <ProjectCard {...projects[2]} className="md:row-span-1 md:col-span-1" />
+        </div>
+      )}
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4">
-      <ProjectCard {...projects[0]} className="md:row-span-1 md:col-span-1" />
-      <ProjectCard {...projects[1]} className="md:row-span-1 md:col-span-1" />
-      <ProjectCard {...projects[2]} className="md:row-span-1 md:col-span-1" />
+  );
+};
+
+export const MobileExperiences = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const onScroll = (e) => {
+    if (!e) return;
+
+    const { scrollWidth } = e.currentTarget;
+    const scrollX = e.currentTarget.scrollLeft;
+    const innerWidth = e.currentTarget.clientWidth;
+
+    const scrollPercentage = (scrollX / (scrollWidth - innerWidth)) * 100;
+
+    const third = Math.floor(scrollPercentage / 33) + 1;
+
+    setActiveIndex(Math.min(third - 1, 2));
+  };
+
+  return (
+    <div className="-mx-6">
+      <div className="align-start mx-auto mb-3 ms-4 flex gap-x-2 overflow-auto px-3">
+        {projects.map((experience, index) => (
+          <Stepper key={experience.id} active={index === activeIndex} />
+        ))}
+      </div>
+
+      <div onScroll={onScroll} className="flex snap-x snap-mandatory overflow-auto pb-3">
+        {projects.map((experience, i) => (
+          <div key={i} className="w-[calc(100vw-2rem)] shrink-0 snap-start px-2">
+            <ProjectCard {...projects[i]} className="md:row-span-1 md:col-span-1" />
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
+  );
+};
+
+const Stepper = ({ active }) => (
+  <div className={`h-1 w-[50px] transition-colors ${active ? 'bg-yellow-400' : 'bg-darkCard/10 dark:bg-darkCard'}`} />
 );

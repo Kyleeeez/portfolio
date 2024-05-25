@@ -5,6 +5,8 @@ import { DesktopCarousel } from './carousel/desktop-carousel';
 import { MobileCarousel } from './carousel/mobile-carousel';
 import useIsMobile from '../../../hooks/isMobile';
 import { AnimatedBlobs } from '../../Blobs';
+import { careerExperiences } from '../../../lib/data';
+import { DetailCard } from './carousel/Cards';
 
 export const CareerSection = () => {
   const isMobile = useIsMobile();
